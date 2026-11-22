@@ -66,4 +66,5 @@ npm run verify:files   # 내려받은 DOCX/XLSX/백업을 python-docx·openpyxl�
 | [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md) | 단계별 진행 결과와 후속(5~8 영역) 계획 |
 | [TEST_REPORT.md](TEST_REPORT.md) | 단위·E2E·파일 검증 결과와 증거 위치 |
 | [KNOWN_ISSUES.md](KNOWN_ISSUES.md) | 알려진 한계와 미검증 항목 |
+| [docs/SCHOOL_REQUIREMENTS.md](docs/SCHOOL_REQUIREMENTS.md) | 단국대 행정법무대학원 공식 안내 확인 기록 |
 | [HANDOFF.md](HANDOFF.md) | 인계 정보, 요구사항별 구현·테스트 위치(독립 검수용) |

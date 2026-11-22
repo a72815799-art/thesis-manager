@@ -36,7 +36,7 @@
 ### 부분 구현
 
 - 변경 요청 대상: 연구 개요 4칸, 연구 대상 5칸, 변수 3칸, 가설 문장만 지원(KNOWN_ISSUES 4번)
-- 학교 요구사항: 양식과 데이터를 분리하는 구조만 마련. 실제 학교 양식은 반영하지 못함(사이트 접근 차단)
+- 학교 요구사항: 공식 안내 두 페이지를 확인해 `docs/SCHOOL_REQUIREMENTS.md`에 기록. 양식과 데이터를 분리하는 구조만 마련했고 실제 학교 양식은 반영하지 않음(호환성 미검증)
 
 ### 실패
 
@@ -84,7 +84,7 @@ TEST_REPORT.md 의 “증거 자료 위치” 참고. 요약:
 | 7 데모·가상 예시 표시 | `src/demo/demo.ts`, `App.tsx` 배너, `docx.ts` DEMO_NOTICE, `xlsx.ts` 첫 행 | `export.test.ts`, `impact.test.ts`(데모 사용) | D01 |
 | 8 UX(한국어, 저장 상태, 삭제 확인, 빈 화면, 긴 텍스트, 검색·필터, 반응형) | `src/ui/common.tsx`, `styles.css`, 각 페이지 | — | X01, X08, X10, X11, R01 |
 | 9 데이터 무결성 | `src/domain/integrity.ts`, `repo.ts` tx/delete*, `schemas.ts` | “원자성·프로젝트 분리” 묶음, `backup.test.ts` | S19, X06~X09 |
-| 10 학교 요구사항 | 미반영 (사이트 접근 차단) | — | — |
+| 10 학교 요구사항 | `docs/SCHOOL_REQUIREMENTS.md` (공식 안내 확인 기록, 양식 호환성은 미검증) | — | — |
 | 13 필수 시나리오 20개 | — | — | S01~S20 (번호 1:1) |
 | 13 예외 상황 10개 | — | `repo.test.ts`, `backup.test.ts` | X01~X11 |
 
