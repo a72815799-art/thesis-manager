@@ -29,7 +29,8 @@ describe('백업·복원', () => {
     expect(await db.evidence.count()).toBe(0);
 
     const backup = parseBackup(text);
-    expect(backup.schemaVersion).toBe(1);
+    expect(backup.schemaVersion).toBe(2);
+    expect(backup.integrity?.hash).toMatch(/^[0-9a-f]{64}$/);
     expect(backup.isDemo).toBe(true);
     const r = await restoreBackup(backup, 'new');
     expect(r.projectId).toBe(pid);
@@ -128,5 +129,62 @@ describe('백업·복원', () => {
     const b = await repo.loadBundle(pid);
     expect(b.attachments.every((a) => a.storage === 'reference-only')).toBe(true);
     expect(b.attachments.some((a) => a.note.includes('참조 정보만 복원'))).toBe(true);
+  });
+
+  it('무결성 해시: 건수·형식이 멀쩡해도 내용이 한 글자라도 바뀌면 거부한다', async () => {
+    const pid = await demoWithHistory();
+    const text = JSON.stringify(await exportBackup(pid));
+    const tampered = JSON.parse(text);
+    tampered.bundle.evidence[0].content += ' (몰래 수정)';
+    expect(() => parseBackup(JSON.stringify(tampered))).toThrow('무결성 검증에 실패');
+    const tamperedFile = JSON.parse(text);
+    const k = Object.keys(tamperedFile.attachmentFiles)[0];
+    tamperedFile.attachmentFiles[k] = tamperedFile.attachmentFiles[k].slice(0, -4) + 'AAAA';
+    expect(() => parseBackup(JSON.stringify(tamperedFile))).toThrow('무결성 검증에 실패');
+    const noHash = JSON.parse(text);
+    delete noHash.integrity;
+    expect(() => parseBackup(JSON.stringify(noHash))).toThrow('무결성 검증 정보가 없습니다');
+    // 키 순서만 바뀐 것은 같은 내용이므로 통과
+    const reordered = JSON.parse(text);
+    reordered.bundle.project = Object.fromEntries(Object.entries(reordered.bundle.project).reverse());
+    expect(parseBackup(JSON.stringify(reordered)).integrity?.hash).toBe(JSON.parse(text).integrity.hash);
+  });
+
+  it('스키마 v1 백업(무결성 해시 없음)은 마이그레이션을 거쳐 복원된다', async () => {
+    const pid = await demoWithHistory();
+    const v1 = JSON.parse(JSON.stringify(await exportBackup(pid)));
+    v1.schemaVersion = 1;
+    delete v1.integrity;
+    const parsed = parseBackup(JSON.stringify(v1));
+    expect(parsed.schemaVersion).toBe(2);
+    expect(parsed.integrity).toBeNull();
+    await repo.deleteProject(pid);
+    await restoreBackup(parsed, 'new');
+    expect(checkIntegrity(await repo.loadBundle(pid))).toEqual([]);
+  });
+
+  it('같은 백업을 여러 번 복원해도 ID 충돌이나 데이터 중복이 생기지 않는다', async () => {
+    const pid = await demoWithHistory();
+    const backup = parseBackup(JSON.stringify(await exportBackup(pid)));
+    const n = { ev: await db.evidence.count(), ver: await db.proposalVersions.count(), log: await db.changeLog.count() };
+    // 덮어쓰기 2회: 항목 수가 늘지 않는다 (복원 기록만 1건)
+    await restoreBackup(backup, 'overwrite');
+    await restoreBackup(backup, 'overwrite');
+    expect(await db.projects.count()).toBe(1);
+    expect(await db.evidence.count()).toBe(n.ev);
+    expect(await db.proposalVersions.count()).toBe(n.ver);
+    expect(await db.changeLog.count()).toBe(n.log + 1);
+    // 사본 2회: 매번 새 ID, 서로 다른 제목, 각 프로젝트 무결성 유지
+    const c1 = await restoreBackup(backup, 'copy');
+    const c2 = await restoreBackup(backup, 'copy');
+    expect(new Set([pid, c1.projectId, c2.projectId]).size).toBe(3);
+    const titles = (await db.projects.toArray()).map((p) => p.title);
+    expect(new Set(titles).size).toBe(3);
+    expect(await db.evidence.count()).toBe(n.ev * 3);
+    const allIds = (await db.evidence.toArray()).map((e) => e.id);
+    expect(new Set(allIds).size).toBe(allIds.length);
+    for (const id of [pid, c1.projectId, c2.projectId]) expect(checkIntegrity(await repo.loadBundle(id))).toEqual([]);
+    // '새로 복원'은 같은 프로젝트가 있으면 거부
+    await expect(restoreBackup(backup, 'new')).rejects.toMatchObject({ code: 'duplicate' });
   });
 });

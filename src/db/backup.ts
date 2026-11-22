@@ -2,6 +2,7 @@ import { CHILD_TABLES, db, newId, nowIso } from './db';
 import { AppError, loadBundle } from './repo';
 import { checkIntegrity } from '../domain/integrity';
 import { bundleSchema, formatZodError } from '../domain/schemas';
+import { canonicalJson, sha256Hex } from '../domain/sha256';
 import { ID, ProjectBundle, SCHEMA_VERSION } from '../domain/types';
 
 export const BACKUP_FORMAT = 'thesis-manager-backup';
@@ -21,6 +22,13 @@ export interface BackupFile {
   bundle: ProjectBundle;
   /** 첨부 id → base64 본문 */
   attachmentFiles: Record<ID, string>;
+  /** 무결성 검증 정보. bundle 과 attachmentFiles 전체의 SHA-256. v1 백업에는 없다(null). */
+  integrity: { algorithm: 'SHA-256'; hash: string } | null;
+}
+
+/** 백업 내용(bundle + 첨부 본문)의 무결성 해시 */
+export function computeIntegrityHash(bundle: ProjectBundle, attachmentFiles: Record<ID, string>): string {
+  return sha256Hex(`${canonicalJson(bundle)}\n${canonicalJson(attachmentFiles)}`);
 }
 
 export function bundleCounts(b: ProjectBundle): Record<string, number> {
@@ -76,11 +84,15 @@ export async function exportBackup(projectId: ID, includeFiles = true): Promise<
     filesIncluded: includeFiles,
     bundle,
     attachmentFiles,
+    integrity: { algorithm: 'SHA-256', hash: computeIntegrityHash(bundle, attachmentFiles) },
   };
 }
 
 /** 스키마 버전별 마이그레이션. 버전을 올릴 때 여기에 단계별 변환을 추가한다. */
-const MIGRATIONS: Record<number, (raw: Record<string, unknown>) => Record<string, unknown>> = {};
+const MIGRATIONS: Record<number, (raw: Record<string, unknown>) => Record<string, unknown>> = {
+  // v1 → v2: 데이터 구조는 같고 무결성 해시만 추가되었다. v1 백업은 해시 없이(null) 받아들인다.
+  1: (raw) => ({ ...raw, integrity: null }),
+};
 
 /**
  * 백업 파일 내용을 검증한다. 저장소는 건드리지 않는다.
@@ -95,6 +107,7 @@ export function parseBackup(text: string): BackupFile {
   }
   if (!raw || typeof raw !== 'object' || raw.format !== BACKUP_FORMAT)
     throw new AppError('이 앱에서 만든 백업 파일이 아닙니다.', 'invalid');
+  const originalVersion = raw.schemaVersion;
   let version = raw.schemaVersion;
   if (typeof version !== 'number' || !Number.isInteger(version) || version < 1)
     throw new AppError('백업 파일의 스키마 버전 정보가 없습니다.', 'invalid');
@@ -119,6 +132,16 @@ export function parseBackup(text: string): BackupFile {
   const files = (raw.attachmentFiles ?? {}) as Record<string, unknown>;
   if (typeof files !== 'object' || Object.values(files).some((v) => typeof v !== 'string'))
     throw new AppError('백업의 첨부파일 데이터가 올바르지 않습니다.', 'invalid');
+  // 무결성 해시: v2 이상은 반드시 일치해야 한다 (원본 JSON 값 기준으로 계산)
+  let integrity: BackupFile['integrity'] = null;
+  if ((originalVersion as number) >= 2) {
+    const i = raw.integrity as { algorithm?: unknown; hash?: unknown } | null | undefined;
+    if (!i || i.algorithm !== 'SHA-256' || typeof i.hash !== 'string')
+      throw new AppError('백업 파일에 무결성 검증 정보가 없습니다. 파일이 손상되었거나 수정되었습니다.', 'invalid');
+    if (computeIntegrityHash(raw.bundle as ProjectBundle, files as Record<ID, string>) !== i.hash)
+      throw new AppError('백업 파일의 무결성 검증에 실패했습니다. 백업한 뒤 내용이 바뀌었거나 파일이 손상되었습니다.', 'invalid');
+    integrity = { algorithm: 'SHA-256', hash: i.hash };
+  }
   const attIds = new Set(bundle.attachments.map((a) => a.id));
   for (const k of Object.keys(files)) if (!attIds.has(k)) throw new AppError('백업에 주인 없는 첨부파일 데이터가 있습니다.', 'invalid');
   return {
@@ -132,6 +155,7 @@ export function parseBackup(text: string): BackupFile {
     filesIncluded: raw.filesIncluded === true,
     bundle,
     attachmentFiles: files as Record<ID, string>,
+    integrity,
   };
 }
 
@@ -153,7 +177,9 @@ export function remapIds(backup: BackupFile): BackupFile {
   const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(Array.from(map.keys()).map(esc).join('|'), 'g');
   const swap = (obj: unknown) => JSON.parse(JSON.stringify(obj).replace(pattern, (m) => map.get(m) ?? m));
-  return { ...backup, bundle: swap(backup.bundle), attachmentFiles: swap(backup.attachmentFiles) };
+  const bundle = swap(backup.bundle);
+  const attachmentFiles = swap(backup.attachmentFiles);
+  return { ...backup, bundle, attachmentFiles, integrity: backup.integrity ? { algorithm: 'SHA-256', hash: computeIntegrityHash(bundle, attachmentFiles) } : null };
 }
 
 export interface RestorePlan {

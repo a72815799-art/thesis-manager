@@ -44,6 +44,17 @@ export function MeetingPage() {
   const m = b.meetings.find((x) => x.id === selected) ?? latestMeeting(b.meetings);
   const s = buildSnapshot(b, m?.id);
   const d = bundleDiagram(b);
+  // 미해결 쟁점: 저장된 데이터에서 그대로 집계한다(문장을 만들어 내지 않는다)
+  const noEvidence = b.hypotheses.filter((h) => !b.evidence.some((e) => e.hypothesisIds.includes(h.id) && e.status === 'verified'));
+  const recheck = b.evidence.filter((e) => e.status === 'recheck');
+  const pendingImpacts = b.impactReviews.filter((r) => r.needsReview && r.status === 'pending').length;
+  const issues: string[] = [
+    ...b.feedback.filter((f) => f.status !== 'done').map((f) => `처리되지 않은 지도교수 피드백 ${f.code} (${f.meetingDate})`),
+    ...b.changeRequests.filter((c) => c.status === 'draft').map((c) => `검토 대기 중인 변경 요청 ${c.code}: ${c.targetLabel}`),
+    ...(recheck.length ? [`재검토가 필요한 근거 ${recheck.length}건: ${recheck.map((e) => e.code).join(', ')}`] : []),
+    ...(pendingImpacts ? [`확인 전인 변경 영향 항목 ${pendingImpacts}건`] : []),
+    ...(noEvidence.length ? [`확인 완료 근거가 없는 가설: ${noEvidence.map((h) => h.code).join(', ')}`] : []),
+  ];
   return (
     <>
       <div className="page-head no-print">
@@ -91,6 +102,8 @@ export function MeetingPage() {
           <div><h3>확인이 필요한 사항</h3>{s.advisorCheckItems.length ? <ol style={{ margin: 0, paddingLeft: 20 }} data-testid="sheet-checks">{s.advisorCheckItems.map((q, i) => <li key={i}>{q}</li>)}</ol> : <Todo />}</div>
           <div><h3>지도교수에게 질문할 내용</h3>{s.advisorQuestions.length ? <ol style={{ margin: 0, paddingLeft: 20 }}>{s.advisorQuestions.map((q, i) => <li key={i}>{q}</li>)}</ol> : <Todo />}</div>
         </div>
+        <h3>미해결 쟁점 <span className="muted small">(프로젝트 데이터에서 자동 집계)</span></h3>
+        {issues.length ? <ul style={{ margin: 0, paddingLeft: 20 }} data-testid="sheet-issues">{issues.map((q, i) => <li key={i}>{q}</li>)}</ul> : <div className="muted" data-testid="sheet-issues">집계된 미해결 항목이 없습니다.</div>}
       </div>
       {form && <MeetingForm pid={b.project.id} item={form === 'new' ? null : form} onClose={() => setForm(null)} onSaved={setSelected} />}
     </>

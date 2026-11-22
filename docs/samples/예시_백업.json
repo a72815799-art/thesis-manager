@@ -1,8 +1,8 @@
 {
  "format": "thesis-manager-backup",
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "appVersion": "0.1.0",
- "exportedAt": "2026-11-22T02:30:16.776Z",
+ "exportedAt": "2026-11-22T11:28:00.084Z",
  "isDemo": true,
  "notice": "가상 예시 데이터입니다. 실제 연구 자료가 아닙니다.",
  "counts": {
@@ -21,7 +21,7 @@
  "filesIncluded": true,
  "bundle": {
   "project": {
-   "id": "97788a93-c138-418b-a5ba-d20c53ca327c",
+   "id": "febb42c7-43e2-45da-a93b-d2727f779ca3",
    "title": "한부모가족 대학생의 지각된 차별과 외상 후 성장의 관계에서 회복탄력성의 매개효과",
    "purpose": "한부모가족 대학생이 지각한 차별이 외상 후 성장에 미치는 영향을 확인하고, 그 관계에서 회복탄력성이 매개 역할을 하는지 검증한다. (가상 예시)",
    "background": "한부모가족 대학생은 가족 형태에 대한 사회적 편견을 경험할 수 있으며, 이러한 경험이 심리적 적응에 어떤 영향을 주는지 이해할 필요가 있다. 이 문단은 기능 시연을 위한 가상 예시 문장이며 실제 선행연구 요약이 아니다.",
@@ -34,13 +34,13 @@
    ],
    "milestones": [
     {
-     "id": "423e1eae-1939-4575-85bf-893a0a8d8a9b",
+     "id": "cf95a5f6-5c0c-4c2d-89a3-6145285435d8",
      "label": "연구계획서 초안 지도교수 면담",
      "date": "",
      "done": true
     },
     {
-     "id": "96c953e2-57f1-4259-aac0-c1c92feaf115",
+     "id": "36378113-bef8-4562-a66e-0a5427985cd1",
      "label": "연구계획서 수정본 제출",
      "date": "",
      "done": false
@@ -57,120 +57,120 @@
     "CR": 1,
     "M": 1
    },
-   "createdAt": "2026-11-22T02:30:16.697Z",
-   "updatedAt": "2026-11-22T02:30:16.740Z"
+   "createdAt": "2026-11-22T11:27:59.951Z",
+   "updatedAt": "2026-11-22T11:28:00.000Z"
   },
   "subject": {
-   "id": "92d0adc6-1eff-4183-9c70-0a99ccba28a5",
-   "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+   "id": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b",
+   "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
    "population": "한부모가족 경험이 있는 성인",
    "definition": "부 또는 모 한 명과 함께 성장했거나 현재 한부모가족에 속한 4년제 대학 재학생 (가상 예시)",
    "recruitmentCriteria": "만 18세 이상, 한부모가족 대학생으로서 연구 참여에 동의한 사람 (가상 예시)",
    "exclusionCriteria": "휴학 중인 학생 (가상 예시)",
    "samplePlan": "온라인 편의표집 (가상 예시)",
    "notes": "",
-   "updatedAt": "2026-11-22T02:30:16.735Z"
+   "updatedAt": "2026-11-22T11:27:59.992Z"
   },
   "variables": [
    {
-    "id": "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "V1",
     "name": "지각된 차별",
     "role": "independent",
     "conceptualDefinition": "가족 형태로 인해 부당한 대우를 받았다고 개인이 주관적으로 인식하는 정도 (가상 예시 정의)",
     "operationalDefinition": "",
     "notes": "",
-    "createdAt": "2026-11-22T02:30:16.699Z",
-    "updatedAt": "2026-11-22T02:30:16.699Z"
+    "createdAt": "2026-11-22T11:27:59.952Z",
+    "updatedAt": "2026-11-22T11:27:59.952Z"
    },
    {
-    "id": "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "V2",
     "name": "회복탄력성",
     "role": "mediator",
     "conceptualDefinition": "역경을 겪은 뒤 다시 적응해 나가는 개인의 심리적 능력 (가상 예시 정의)",
     "operationalDefinition": "",
     "notes": "",
-    "createdAt": "2026-11-22T02:30:16.704Z",
-    "updatedAt": "2026-11-22T02:30:16.704Z"
+    "createdAt": "2026-11-22T11:27:59.953Z",
+    "updatedAt": "2026-11-22T11:27:59.953Z"
    },
    {
-    "id": "7e88df4f-3b7d-44bd-a2af-55d0ede489e3",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "d37508cd-431f-4cd0-ab27-638665af0d8b",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "V3",
     "name": "외상 후 성장",
     "role": "dependent",
     "conceptualDefinition": "힘든 사건과 씨름한 결과로 경험하는 긍정적인 심리적 변화 (가상 예시 정의)",
     "operationalDefinition": "",
     "notes": "",
-    "createdAt": "2026-11-22T02:30:16.705Z",
-    "updatedAt": "2026-11-22T02:30:16.705Z"
+    "createdAt": "2026-11-22T11:27:59.954Z",
+    "updatedAt": "2026-11-22T11:27:59.954Z"
    }
   ],
   "hypotheses": [
    {
-    "id": "82854007-7dc7-4e53-89ac-8f3cacde3c4c",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "f66d04ea-98de-450a-ab2a-6ec527b9b7d3",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "H1",
     "statement": "한부모가족 대학생의 지각된 차별은 외상 후 성장에 유의한 영향을 미칠 것이다.",
     "kind": "direct",
-    "fromVariableId": "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-    "toVariableId": "7e88df4f-3b7d-44bd-a2af-55d0ede489e3",
+    "fromVariableId": "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+    "toVariableId": "d37508cd-431f-4cd0-ab27-638665af0d8b",
     "viaVariableId": null,
     "extraVariableIds": [],
     "notes": "",
-    "createdAt": "2026-11-22T02:30:16.706Z",
-    "updatedAt": "2026-11-22T02:30:16.706Z"
+    "createdAt": "2026-11-22T11:27:59.954Z",
+    "updatedAt": "2026-11-22T11:27:59.954Z"
    },
    {
-    "id": "a0173f3d-11da-45f2-9e77-4cb7913c8d1b",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "e0d39e57-0fb0-4eb1-825b-11aa7514e8fe",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "H2",
     "statement": "지각된 차별은 회복탄력성에 부적 영향을 미칠 것이다.",
     "kind": "direct",
-    "fromVariableId": "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-    "toVariableId": "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
+    "fromVariableId": "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+    "toVariableId": "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
     "viaVariableId": null,
     "extraVariableIds": [],
     "notes": "",
-    "createdAt": "2026-11-22T02:30:16.708Z",
-    "updatedAt": "2026-11-22T02:30:16.708Z"
+    "createdAt": "2026-11-22T11:27:59.956Z",
+    "updatedAt": "2026-11-22T11:27:59.956Z"
    },
    {
-    "id": "11d519c8-8ddc-42fc-b8d5-285b3eb822fc",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "47921290-45ac-43fc-9134-0b596c6dcbde",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "H3",
     "statement": "회복탄력성은 외상 후 성장에 정적 영향을 미칠 것이다.",
     "kind": "direct",
-    "fromVariableId": "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
-    "toVariableId": "7e88df4f-3b7d-44bd-a2af-55d0ede489e3",
+    "fromVariableId": "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
+    "toVariableId": "d37508cd-431f-4cd0-ab27-638665af0d8b",
     "viaVariableId": null,
     "extraVariableIds": [],
     "notes": "",
-    "createdAt": "2026-11-22T02:30:16.709Z",
-    "updatedAt": "2026-11-22T02:30:16.709Z"
+    "createdAt": "2026-11-22T11:27:59.960Z",
+    "updatedAt": "2026-11-22T11:27:59.960Z"
    },
    {
-    "id": "53db1db6-2aa4-44c1-858d-aabf32298985",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "3fe350cd-745c-4170-b93b-f2525ae54474",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "H4",
     "statement": "회복탄력성은 지각된 차별과 외상 후 성장의 관계를 매개할 것이다.",
     "kind": "mediation",
-    "fromVariableId": "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-    "toVariableId": "7e88df4f-3b7d-44bd-a2af-55d0ede489e3",
-    "viaVariableId": "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
+    "fromVariableId": "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+    "toVariableId": "d37508cd-431f-4cd0-ab27-638665af0d8b",
+    "viaVariableId": "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
     "extraVariableIds": [],
     "notes": "",
-    "createdAt": "2026-11-22T02:30:16.710Z",
-    "updatedAt": "2026-11-22T02:30:16.710Z"
+    "createdAt": "2026-11-22T11:27:59.961Z",
+    "updatedAt": "2026-11-22T11:27:59.961Z"
    }
   ],
   "literature": [
    {
-    "id": "04e7bd58-8e5e-458a-a81b-4521e026fd26",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "7816ce70-61bc-4996-a761-258ab831288f",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "L1",
     "title": "(가상 예시 문헌 A) 대학생의 지각된 차별과 회복탄력성의 관계",
     "authors": "가상저자 가, 가상저자 나",
@@ -184,17 +184,17 @@
     "keyFindings": "지각된 차별이 높을수록 회복탄력성이 낮았다는 가상의 결과",
     "notes": "기능 시연용 가상 문헌입니다.",
     "variableIds": [
-     "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-     "2fdfcd56-0417-45a3-bdb9-1413ce9a349e"
+     "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+     "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5"
     ],
     "isKey": true,
     "isFictional": true,
-    "createdAt": "2026-11-22T02:30:16.711Z",
-    "updatedAt": "2026-11-22T02:30:16.711Z"
+    "createdAt": "2026-11-22T11:27:59.962Z",
+    "updatedAt": "2026-11-22T11:27:59.962Z"
    },
    {
-    "id": "d0bafa2f-b890-4da0-ac6e-e788984b032e",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "586ee437-c6b2-4d84-91c0-d822fbff6ee4",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "L2",
     "title": "(가상 예시 문헌 B) 회복탄력성과 외상 후 성장: 청년을 대상으로",
     "authors": "가상저자 다",
@@ -208,17 +208,17 @@
     "keyFindings": "회복탄력성이 높을수록 외상 후 성장이 높았다는 가상의 결과",
     "notes": "기능 시연용 가상 문헌입니다.",
     "variableIds": [
-     "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
-     "7e88df4f-3b7d-44bd-a2af-55d0ede489e3"
+     "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
+     "d37508cd-431f-4cd0-ab27-638665af0d8b"
     ],
     "isKey": true,
     "isFictional": true,
-    "createdAt": "2026-11-22T02:30:16.713Z",
-    "updatedAt": "2026-11-22T02:30:16.713Z"
+    "createdAt": "2026-11-22T11:27:59.963Z",
+    "updatedAt": "2026-11-22T11:27:59.963Z"
    },
    {
-    "id": "31e1b3a4-f8c7-4dc9-b7b3-cf87f7098caf",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "4cb1d45a-615c-4b26-9b17-63eb3d87dd2b",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "L3",
     "title": "(가상 예시 문헌 C) 차별 경험과 외상 후 성장의 관계에서 심리적 자원의 매개효과",
     "authors": "가상저자 라, 가상저자 마",
@@ -232,108 +232,108 @@
     "keyFindings": "심리적 자원이 차별 경험과 외상 후 성장의 관계를 매개했다는 가상의 결과",
     "notes": "기능 시연용 가상 문헌입니다.",
     "variableIds": [
-     "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-     "7e88df4f-3b7d-44bd-a2af-55d0ede489e3"
+     "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+     "d37508cd-431f-4cd0-ab27-638665af0d8b"
     ],
     "isKey": false,
     "isFictional": true,
-    "createdAt": "2026-11-22T02:30:16.714Z",
-    "updatedAt": "2026-11-22T02:30:16.714Z"
+    "createdAt": "2026-11-22T11:27:59.965Z",
+    "updatedAt": "2026-11-22T11:27:59.965Z"
    }
   ],
   "evidence": [
    {
-    "id": "ec6cf476-bb51-4ef1-b478-3128f619eb50",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "literatureId": "04e7bd58-8e5e-458a-a81b-4521e026fd26",
+    "id": "6ab49e7e-75d7-4c70-9a30-3feb457f606e",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "literatureId": "7816ce70-61bc-4996-a761-258ab831288f",
     "code": "E1",
     "content": "지각된 차별과 회복탄력성 사이에 부적 상관이 보고되었다는 가상의 근거 문장",
     "page": "12",
     "kind": "summary",
     "variableIds": [
-     "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-     "2fdfcd56-0417-45a3-bdb9-1413ce9a349e"
+     "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+     "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5"
     ],
     "hypothesisIds": [
-     "a0173f3d-11da-45f2-9e77-4cb7913c8d1b"
+     "e0d39e57-0fb0-4eb1-825b-11aa7514e8fe"
     ],
     "notes": "가상 예시",
     "status": "recheck",
     "recheckReason": "CR1 적용: 연구 대상 · 연구 대상 변경 (\"한부모가족 대학생\" → \"한부모가족 경험이 있는 성인\")",
-    "verifiedAt": "2026-11-22T02:30:16.717Z",
-    "createdAt": "2026-11-22T02:30:16.717Z",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "verifiedAt": "2026-11-22T11:27:59.972Z",
+    "createdAt": "2026-11-22T11:27:59.972Z",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "7fb22451-94ec-4701-8f07-a62d1f7db8c1",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "literatureId": "d0bafa2f-b890-4da0-ac6e-e788984b032e",
+    "id": "f0dcf127-e069-4f25-a233-9295e5d4651e",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "literatureId": "586ee437-c6b2-4d84-91c0-d822fbff6ee4",
     "code": "E2",
     "content": "회복탄력성이 외상 후 성장을 정적으로 예측했다는 가상의 근거 문장",
     "page": "8",
     "kind": "summary",
     "variableIds": [
-     "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
-     "7e88df4f-3b7d-44bd-a2af-55d0ede489e3"
+     "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
+     "d37508cd-431f-4cd0-ab27-638665af0d8b"
     ],
     "hypothesisIds": [
-     "11d519c8-8ddc-42fc-b8d5-285b3eb822fc",
-     "53db1db6-2aa4-44c1-858d-aabf32298985"
+     "47921290-45ac-43fc-9134-0b596c6dcbde",
+     "3fe350cd-745c-4170-b93b-f2525ae54474"
     ],
     "notes": "가상 예시",
     "status": "recheck",
     "recheckReason": "CR1 적용: 연구 대상 · 연구 대상 변경 (\"한부모가족 대학생\" → \"한부모가족 경험이 있는 성인\")",
-    "verifiedAt": "2026-11-22T02:30:16.721Z",
-    "createdAt": "2026-11-22T02:30:16.721Z",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "verifiedAt": "2026-11-22T11:27:59.973Z",
+    "createdAt": "2026-11-22T11:27:59.973Z",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "390be7b0-262c-4c8d-a4a7-ee00d5224a34",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "literatureId": "31e1b3a4-f8c7-4dc9-b7b3-cf87f7098caf",
+    "id": "adc8c3d1-c760-4d98-898d-45fd5c750b82",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "literatureId": "4cb1d45a-615c-4b26-9b17-63eb3d87dd2b",
     "code": "E3",
     "content": "차별 경험이 외상 후 성장과 관련된다는 가상의 근거 문장",
     "page": "5",
     "kind": "summary",
     "variableIds": [
-     "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-     "7e88df4f-3b7d-44bd-a2af-55d0ede489e3"
+     "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+     "d37508cd-431f-4cd0-ab27-638665af0d8b"
     ],
     "hypothesisIds": [
-     "82854007-7dc7-4e53-89ac-8f3cacde3c4c"
+     "f66d04ea-98de-450a-ab2a-6ec527b9b7d3"
     ],
     "notes": "가상 예시 · 원문 확인 전 상태 예시",
     "status": "unverified",
     "recheckReason": "",
     "verifiedAt": null,
-    "createdAt": "2026-11-22T02:30:16.723Z",
-    "updatedAt": "2026-11-22T02:30:16.723Z"
+    "createdAt": "2026-11-22T11:27:59.975Z",
+    "updatedAt": "2026-11-22T11:27:59.975Z"
    },
    {
-    "id": "5d689c8b-f221-4c26-9a6c-6e86d74b79e5",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "literatureId": "31e1b3a4-f8c7-4dc9-b7b3-cf87f7098caf",
+    "id": "0a27871d-599e-4782-8098-73dc9e616a33",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "literatureId": "4cb1d45a-615c-4b26-9b17-63eb3d87dd2b",
     "code": "E4",
     "content": "심리적 자원의 매개효과가 유의했다는 가상의 근거 문장",
     "page": "14",
     "kind": "summary",
     "variableIds": [
-     "2fdfcd56-0417-45a3-bdb9-1413ce9a349e"
+     "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5"
     ],
     "hypothesisIds": [
-     "53db1db6-2aa4-44c1-858d-aabf32298985"
+     "3fe350cd-745c-4170-b93b-f2525ae54474"
     ],
     "notes": "가상 예시",
     "status": "checking",
     "recheckReason": "",
     "verifiedAt": null,
-    "createdAt": "2026-11-22T02:30:16.724Z",
-    "updatedAt": "2026-11-22T02:30:16.724Z"
+    "createdAt": "2026-11-22T11:27:59.976Z",
+    "updatedAt": "2026-11-22T11:27:59.976Z"
    },
    {
-    "id": "674aa62c-6451-4505-acad-00da865e6f03",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "literatureId": "04e7bd58-8e5e-458a-a81b-4521e026fd26",
+    "id": "e784873f-027f-40d9-9602-ccd8279df170",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "literatureId": "7816ce70-61bc-4996-a761-258ab831288f",
     "code": "E5",
     "content": "연구의 제한점으로 표본의 대표성을 언급했다는 가상의 메모 (어느 가설에도 연결하지 않은 예시)",
     "page": "20",
@@ -343,35 +343,35 @@
     "notes": "가상 예시",
     "status": "verified",
     "recheckReason": "",
-    "verifiedAt": "2026-11-22T02:30:16.725Z",
-    "createdAt": "2026-11-22T02:30:16.725Z",
-    "updatedAt": "2026-11-22T02:30:16.725Z"
+    "verifiedAt": "2026-11-22T11:27:59.978Z",
+    "createdAt": "2026-11-22T11:27:59.978Z",
+    "updatedAt": "2026-11-22T11:27:59.978Z"
    },
    {
-    "id": "47cb5135-0a45-4e4e-aed3-8d35a3b8c901",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "literatureId": "04e7bd58-8e5e-458a-a81b-4521e026fd26",
+    "id": "3eee5e23-ea2f-442d-b16c-47794f28c140",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "literatureId": "7816ce70-61bc-4996-a761-258ab831288f",
     "code": "E6",
     "content": "=SUM(A1) 특수문자 <>&\"' 줄\n바꿈 ①",
     "page": "pp. 3–4",
     "kind": "quote",
     "variableIds": [],
     "hypothesisIds": [
-     "82854007-7dc7-4e53-89ac-8f3cacde3c4c"
+     "f66d04ea-98de-450a-ab2a-6ec527b9b7d3"
     ],
     "notes": "메모@",
     "status": "unverified",
     "recheckReason": "",
     "verifiedAt": null,
-    "createdAt": "2026-11-22T02:30:16.739Z",
-    "updatedAt": "2026-11-22T02:30:16.739Z"
+    "createdAt": "2026-11-22T11:27:59.999Z",
+    "updatedAt": "2026-11-22T11:27:59.999Z"
    }
   ],
   "attachments": [],
   "meetings": [
    {
-    "id": "9066d4e4-3482-42b0-a0c6-fe6e8414bfe1",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "218d26fb-504b-40b4-aa79-840b7629f9a0",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "M1",
     "plannedDate": "",
     "title": "연구계획서 초안 면담 (가상 예시)",
@@ -383,21 +383,21 @@
      "표본 크기는 어느 정도가 적절할까요?"
     ],
     "notes": "",
-    "createdAt": "2026-11-22T02:30:16.726Z",
-    "updatedAt": "2026-11-22T02:30:16.726Z"
+    "createdAt": "2026-11-22T11:27:59.979Z",
+    "updatedAt": "2026-11-22T11:27:59.979Z"
    }
   ],
   "feedback": [
    {
-    "id": "8ce78d93-9963-4f6d-b296-6a89891a6341",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "483cfb24-fbe7-4361-b767-d206cd650605",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "F1",
     "meetingDate": "2025-01-15",
     "professorComment": "(가상 예시) 연구 대상을 대학생으로 한정하면 모집이 어려울 수 있으니, 한부모가족 경험이 있는 성인으로 넓히는 것을 검토해 보세요.",
     "targets": [
      {
       "type": "subject",
-      "id": "92d0adc6-1eff-4183-9c70-0a99ccba28a5"
+      "id": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b"
      }
     ],
     "interpretation": "모집 가능성 때문에 대상을 넓히라는 의견으로 이해함. 선행연구 근거가 성인에게도 적용되는지 확인 필요.",
@@ -407,19 +407,19 @@
     "afterText": "[CR1] 연구 대상 · 연구 대상: 한부모가족 경험이 있는 성인",
     "status": "in_progress",
     "completedAt": null,
-    "createdAt": "2026-11-22T02:30:16.729Z",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "createdAt": "2026-11-22T11:27:59.983Z",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    }
   ],
   "changeRequests": [
    {
-    "id": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "code": "CR1",
-    "feedbackId": "8ce78d93-9963-4f6d-b296-6a89891a6341",
+    "feedbackId": "483cfb24-fbe7-4361-b767-d206cd650605",
     "target": {
      "type": "subject",
-     "id": "92d0adc6-1eff-4183-9c70-0a99ccba28a5",
+     "id": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b",
      "field": "population"
     },
     "targetLabel": "연구 대상 · 연구 대상",
@@ -427,34 +427,70 @@
     "newValue": "한부모가족 경험이 있는 성인",
     "reason": "지도교수 제안: 모집 가능성을 높이기 위해 연구 대상 확대 (가상 예시)",
     "status": "applied",
-    "createdAt": "2026-11-22T02:30:16.731Z",
-    "appliedAt": "2026-11-22T02:30:16.735Z",
-    "preservedVersionId": "018ccf14-b8a5-46a1-8dcb-fd1623f3c172"
+    "createdAt": "2026-11-22T11:27:59.986Z",
+    "appliedAt": "2026-11-22T11:27:59.992Z",
+    "preservedVersionId": "af2bac24-ffd0-4823-818c-f42b3fe825b7"
    }
   ],
   "impactReviews": [
    {
-    "id": "01e5ba2e-4656-4445-b85d-8a2f8f29e70b",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "0193f261-3ac3-4733-837f-8e75ad81851b",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
-     "type": "subject",
-     "id": "92d0adc6-1eff-4183-9c70-0a99ccba28a5#samplePlan"
+     "type": "literature",
+     "id": "4cb1d45a-615c-4b26-9b17-63eb3d87dd2b"
     },
-    "targetLabel": "연구 대상 · 표집 계획",
-    "reason": "연구 대상이(가) 바뀌면 같은 연구 대상 기록의 표집 계획도 일치해야 합니다.",
-    "currentValue": "온라인 편의표집 (가상 예시)",
+    "targetLabel": "L3 (가상 예시 문헌 C) 차별 경험과 외상 후 성장의 관계에서 심리적 자원의 매개효과",
+    "reason": "위 근거의 출처 문헌입니다. 문헌의 연구 대상과 새 연구 대상의 차이를 확인하세요. (이 문헌의 연구 대상: 성인 (가상))",
+    "currentValue": "심리적 자원이 차별 경험과 외상 후 성장의 관계를 매개했다는 가상의 결과",
     "oldValue": "한부모가족 대학생",
     "newValue": "한부모가족 경험이 있는 성인",
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "0582fa14-b837-4132-bdb0-b8185d7a764d",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "01f2a206-3669-4ad9-b97d-199d083858fb",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "evidence",
+     "id": "f0dcf127-e069-4f25-a233-9295e5d4651e"
+    },
+    "targetLabel": "E2 근거",
+    "reason": "가설에 연결된 근거입니다. 근거가 된 연구의 대상이 새 연구 대상에도 적용 가능한지 확인하세요.",
+    "currentValue": "회복탄력성이 외상 후 성장을 정적으로 예측했다는 가상의 근거 문장",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "020bf7bb-c9e6-40a6-a3d6-8c49a581d05f",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "evidence",
+     "id": "adc8c3d1-c760-4d98-898d-45fd5c750b82"
+    },
+    "targetLabel": "E3 근거",
+    "reason": "가설에 연결된 근거입니다. 근거가 된 연구의 대상이 새 연구 대상에도 적용 가능한지 확인하세요.",
+    "currentValue": "차별 경험이 외상 후 성장과 관련된다는 가상의 근거 문장",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "0be2f801-ad57-4edd-9491-e17067c50efe",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "proposalSection",
      "id": "questions"
@@ -467,159 +503,87 @@
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "07209109-675a-4907-bf7a-23444bf39bd3",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "proposalSection",
-     "id": "background"
-    },
-    "targetLabel": "연구계획서 · 2. 연구 배경",
-    "reason": "이 문단은 위 항목에서 만들어집니다. 기존 버전은 그대로 보존되고, 새 버전을 만들면 이 문단이 달라집니다.",
-    "currentValue": "",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "09515d06-2bba-41ca-b2f0-75a0ee674040",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "evidence",
-     "id": "ec6cf476-bb51-4ef1-b478-3128f619eb50"
-    },
-    "targetLabel": "E1 근거",
-    "reason": "가설에 연결된 근거입니다. 근거가 된 연구의 대상이 새 연구 대상에도 적용 가능한지 확인하세요.",
-    "currentValue": "지각된 차별과 회복탄력성 사이에 부적 상관이 보고되었다는 가상의 근거 문장",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "0aa8507c-feb1-49b8-8978-c018c092a17c",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "188514da-248f-49a0-8fc3-0232c3a30e8f",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "project",
-     "id": "97788a93-c138-418b-a5ba-d20c53ca327c#purpose"
+     "id": "febb42c7-43e2-45da-a93b-d2727f779ca3#background"
     },
-    "targetLabel": "연구 개요 · 연구 목적",
+    "targetLabel": "연구 개요 · 연구 배경",
     "reason": "본문에 기존 표현 \"한부모가족 대학생\"이(가) 들어 있습니다.",
-    "currentValue": "한부모가족 대학생이 지각한 차별이 외상 후 성장에 미치는 영향을 확인하고, 그 관계에서 회복탄력성이 매개 역할을 하는지 검증한다. (가상 예시)",
+    "currentValue": "한부모가족 대학생은 가족 형태에 대한 사회적 편견을 경험할 수 있으며, 이러한 경험이 심리적 적응에 어떤 영향을 주는지 이해할 필요가 있다. 이 문단은 기능 시연을 위한 가상 예시 문장이며 실제 선행연구 요약이 아니다.",
     "oldValue": "한부모가족 대학생",
     "newValue": "한부모가족 경험이 있는 성인",
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "1289165c-55d7-4f24-b827-933c4c18343a",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "1f954d40-06c0-491c-bb61-2e8a14685c13",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
-     "type": "proposalSection",
-     "id": "subject"
+     "type": "subject",
+     "id": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b#definition"
     },
-    "targetLabel": "연구계획서 · 5. 연구 대상",
-    "reason": "이 문단은 위 항목에서 만들어집니다. 기존 버전은 그대로 보존되고, 새 버전을 만들면 이 문단이 달라집니다.",
-    "currentValue": "",
+    "targetLabel": "연구 대상 · 연구 대상 정의",
+    "reason": "연구 대상이(가) 바뀌면 같은 연구 대상 기록의 연구 대상 정의도 일치해야 합니다.",
+    "currentValue": "부 또는 모 한 명과 함께 성장했거나 현재 한부모가족에 속한 4년제 대학 재학생 (가상 예시)",
     "oldValue": "한부모가족 대학생",
     "newValue": "한부모가족 경험이 있는 성인",
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "21f1afea-5072-4b45-9622-265a3c9190b1",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "276ca5b3-d4ec-4b32-b8e3-ab48b17617e4",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "subject",
+     "id": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b#samplePlan"
+    },
+    "targetLabel": "연구 대상 · 표집 계획",
+    "reason": "연구 대상이(가) 바뀌면 같은 연구 대상 기록의 표집 계획도 일치해야 합니다.",
+    "currentValue": "온라인 편의표집 (가상 예시)",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "3268742c-e02f-41b2-b2ab-dd5fc0975ad9",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "evidence",
-     "id": "390be7b0-262c-4c8d-a4a7-ee00d5224a34"
+     "id": "0a27871d-599e-4782-8098-73dc9e616a33"
     },
-    "targetLabel": "E3 근거",
+    "targetLabel": "E4 근거",
     "reason": "가설에 연결된 근거입니다. 근거가 된 연구의 대상이 새 연구 대상에도 적용 가능한지 확인하세요.",
-    "currentValue": "차별 경험이 외상 후 성장과 관련된다는 가상의 근거 문장",
+    "currentValue": "심리적 자원의 매개효과가 유의했다는 가상의 근거 문장",
     "oldValue": "한부모가족 대학생",
     "newValue": "한부모가족 경험이 있는 성인",
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "2df56629-1f9b-4f96-b265-2c5964d61ed8",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "45190170-4bb3-4bbb-994b-3f71dfccabe5",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "hypothesis",
-     "id": "a0173f3d-11da-45f2-9e77-4cb7913c8d1b"
-    },
-    "targetLabel": "H2 연구가설",
-    "reason": "가설은 연구 대상 집단을 전제로 검증됩니다. 새 대상에서도 성립하는지 확인하세요.",
-    "currentValue": "지각된 차별은 회복탄력성에 부적 영향을 미칠 것이다.",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "3121c5c7-2097-44b2-9875-8e9f7a641b72",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "literature",
-     "id": "04e7bd58-8e5e-458a-a81b-4521e026fd26"
-    },
-    "targetLabel": "L1 (가상 예시 문헌 A) 대학생의 지각된 차별과 회복탄력성의 관계",
-    "reason": "위 근거의 출처 문헌입니다. 문헌의 연구 대상과 새 연구 대상의 차이를 확인하세요. (이 문헌의 연구 대상: 대학생 (가상))",
-    "currentValue": "지각된 차별이 높을수록 회복탄력성이 낮았다는 가상의 결과",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "3a4e6afa-f44f-469d-beff-5d3125b803bc",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "proposalSection",
-     "id": "literature"
-    },
-    "targetLabel": "연구계획서 · 9. 핵심 선행연구",
-    "reason": "이 문단은 위 항목에서 만들어집니다. 기존 버전은 그대로 보존되고, 새 버전을 만들면 이 문단이 달라집니다.",
-    "currentValue": "",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "3ea3250c-6c93-434b-971e-662f2dfa3b03",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "hypothesis",
-     "id": "82854007-7dc7-4e53-89ac-8f3cacde3c4c"
+     "id": "f66d04ea-98de-450a-ab2a-6ec527b9b7d3"
     },
     "targetLabel": "H1 연구가설",
     "reason": "가설 문장에 기존 표현 \"한부모가족 대학생\"이(가) 들어 있습니다.",
@@ -629,12 +593,30 @@
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "45e5d164-0938-44a4-8bc3-19448d846e04",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "4887eb8d-a05c-4b1a-9858-4fcc9ada51e3",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "hypothesis",
+     "id": "3fe350cd-745c-4170-b93b-f2525ae54474"
+    },
+    "targetLabel": "H4 연구가설",
+    "reason": "가설은 연구 대상 집단을 전제로 검증됩니다. 새 대상에서도 성립하는지 확인하세요.",
+    "currentValue": "회복탄력성은 지각된 차별과 외상 후 성장의 관계를 매개할 것이다.",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "49be0ec7-2f89-4f06-a204-de9ff7731c6f",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "extension",
      "id": "scales"
@@ -647,66 +629,66 @@
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "49a80a16-1b6f-4178-80b5-433d6556cfb7",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "4b60301d-9826-4b64-856e-2f5cc5aea74f",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "project",
-     "id": "97788a93-c138-418b-a5ba-d20c53ca327c#rq0"
+     "id": "febb42c7-43e2-45da-a93b-d2727f779ca3#purpose"
     },
-    "targetLabel": "연구 질문 1",
-    "reason": "질문 문장에 기존 표현 \"한부모가족 대학생\"이(가) 들어 있습니다.",
-    "currentValue": "한부모가족 대학생의 지각된 차별은 외상 후 성장과 어떤 관계가 있는가?",
+    "targetLabel": "연구 개요 · 연구 목적",
+    "reason": "본문에 기존 표현 \"한부모가족 대학생\"이(가) 들어 있습니다.",
+    "currentValue": "한부모가족 대학생이 지각한 차별이 외상 후 성장에 미치는 영향을 확인하고, 그 관계에서 회복탄력성이 매개 역할을 하는지 검증한다. (가상 예시)",
     "oldValue": "한부모가족 대학생",
     "newValue": "한부모가족 경험이 있는 성인",
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "5c21260a-12ca-4ce1-9d71-f0db0f6ca8e9",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "5f5f254a-01ef-4ce3-87e6-b72a0ea427a4",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
-     "type": "evidence",
-     "id": "5d689c8b-f221-4c26-9a6c-6e86d74b79e5"
+     "type": "literature",
+     "id": "586ee437-c6b2-4d84-91c0-d822fbff6ee4"
     },
-    "targetLabel": "E4 근거",
-    "reason": "가설에 연결된 근거입니다. 근거가 된 연구의 대상이 새 연구 대상에도 적용 가능한지 확인하세요.",
-    "currentValue": "심리적 자원의 매개효과가 유의했다는 가상의 근거 문장",
+    "targetLabel": "L2 (가상 예시 문헌 B) 회복탄력성과 외상 후 성장: 청년을 대상으로",
+    "reason": "위 근거의 출처 문헌입니다. 문헌의 연구 대상과 새 연구 대상의 차이를 확인하세요. (이 문헌의 연구 대상: 한부모가족 대학생 (가상))",
+    "currentValue": "회복탄력성이 높을수록 외상 후 성장이 높았다는 가상의 결과",
     "oldValue": "한부모가족 대학생",
     "newValue": "한부모가족 경험이 있는 성인",
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "60d5b6c7-3cda-4980-ae1d-ee4c81c16329",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "65031e96-f03c-48f2-8c7c-b22aec8a09be",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
-     "type": "extension",
-     "id": "ethics"
+     "type": "hypothesis",
+     "id": "e0d39e57-0fb0-4eb1-825b-11aa7514e8fe"
     },
-    "targetLabel": "연구윤리(IRB) 서류의 연구 대상 기재",
-    "reason": "연구윤리 관리는 후속 확장 영역입니다(현재 앱에 기능 없음). 심의 서류의 모집 대상·기준을 직접 확인하세요.",
-    "currentValue": "",
+    "targetLabel": "H2 연구가설",
+    "reason": "가설은 연구 대상 집단을 전제로 검증됩니다. 새 대상에서도 성립하는지 확인하세요.",
+    "currentValue": "지각된 차별은 회복탄력성에 부적 영향을 미칠 것이다.",
     "oldValue": "한부모가족 대학생",
     "newValue": "한부모가족 경험이 있는 성인",
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "62b189b1-7987-4baf-9e1c-19f1de7bbd0a",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "76f1aca7-8811-4646-bf19-086f822ea966",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "proposalSection",
      "id": "title"
@@ -719,87 +701,15 @@
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "647adee8-8045-4559-9bb5-109fe3176341",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "evidence",
-     "id": "7fb22451-94ec-4701-8f07-a62d1f7db8c1"
-    },
-    "targetLabel": "E2 근거",
-    "reason": "가설에 연결된 근거입니다. 근거가 된 연구의 대상이 새 연구 대상에도 적용 가능한지 확인하세요.",
-    "currentValue": "회복탄력성이 외상 후 성장을 정적으로 예측했다는 가상의 근거 문장",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "6d63f8b2-6e61-4442-a684-7a08622cc757",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "79e4a5cd-1eeb-40bc-982a-8bb35db96964",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "project",
-     "id": "97788a93-c138-418b-a5ba-d20c53ca327c#background"
-    },
-    "targetLabel": "연구 개요 · 연구 배경",
-    "reason": "본문에 기존 표현 \"한부모가족 대학생\"이(가) 들어 있습니다.",
-    "currentValue": "한부모가족 대학생은 가족 형태에 대한 사회적 편견을 경험할 수 있으며, 이러한 경험이 심리적 적응에 어떤 영향을 주는지 이해할 필요가 있다. 이 문단은 기능 시연을 위한 가상 예시 문장이며 실제 선행연구 요약이 아니다.",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "84913141-280d-40c2-b5a2-94ab92c242af",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "hypothesis",
-     "id": "53db1db6-2aa4-44c1-858d-aabf32298985"
-    },
-    "targetLabel": "H4 연구가설",
-    "reason": "가설은 연구 대상 집단을 전제로 검증됩니다. 새 대상에서도 성립하는지 확인하세요.",
-    "currentValue": "회복탄력성은 지각된 차별과 외상 후 성장의 관계를 매개할 것이다.",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "8b024860-e12b-4381-a19e-ac292f070f32",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "literature",
-     "id": "d0bafa2f-b890-4da0-ac6e-e788984b032e"
-    },
-    "targetLabel": "L2 (가상 예시 문헌 B) 회복탄력성과 외상 후 성장: 청년을 대상으로",
-    "reason": "위 근거의 출처 문헌입니다. 문헌의 연구 대상과 새 연구 대상의 차이를 확인하세요. (이 문헌의 연구 대상: 한부모가족 대학생 (가상))",
-    "currentValue": "회복탄력성이 높을수록 외상 후 성장이 높았다는 가상의 결과",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "8b7d591f-6b91-4786-b876-12327e5d5435",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "project",
-     "id": "97788a93-c138-418b-a5ba-d20c53ca327c#title"
+     "id": "febb42c7-43e2-45da-a93b-d2727f779ca3#title"
     },
     "targetLabel": "연구 개요 · 연구 제목",
     "reason": "본문에 기존 표현 \"한부모가족 대학생\"이(가) 들어 있습니다.",
@@ -809,84 +719,12 @@
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "a263a9d5-9354-473d-b8be-ffd844975832",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "proposalSection",
-     "id": "hypotheses"
-    },
-    "targetLabel": "연구계획서 · 8. 연구가설",
-    "reason": "이 문단은 위 항목에서 만들어집니다. 기존 버전은 그대로 보존되고, 새 버전을 만들면 이 문단이 달라집니다.",
-    "currentValue": "",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "b90885bf-8d67-471a-ae7a-2d297ac10882",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "literature",
-     "id": "31e1b3a4-f8c7-4dc9-b7b3-cf87f7098caf"
-    },
-    "targetLabel": "L3 (가상 예시 문헌 C) 차별 경험과 외상 후 성장의 관계에서 심리적 자원의 매개효과",
-    "reason": "위 근거의 출처 문헌입니다. 문헌의 연구 대상과 새 연구 대상의 차이를 확인하세요. (이 문헌의 연구 대상: 성인 (가상))",
-    "currentValue": "심리적 자원이 차별 경험과 외상 후 성장의 관계를 매개했다는 가상의 결과",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "c287219f-6ef5-4a2a-b41e-69c1f9974b5d",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "subject",
-     "id": "92d0adc6-1eff-4183-9c70-0a99ccba28a5#definition"
-    },
-    "targetLabel": "연구 대상 · 연구 대상 정의",
-    "reason": "연구 대상이(가) 바뀌면 같은 연구 대상 기록의 연구 대상 정의도 일치해야 합니다.",
-    "currentValue": "부 또는 모 한 명과 함께 성장했거나 현재 한부모가족에 속한 4년제 대학 재학생 (가상 예시)",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "c786acc0-e42c-4232-8453-7a1f67278437",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
-    "target": {
-     "type": "hypothesis",
-     "id": "11d519c8-8ddc-42fc-b8d5-285b3eb822fc"
-    },
-    "targetLabel": "H3 연구가설",
-    "reason": "가설은 연구 대상 집단을 전제로 검증됩니다. 새 대상에서도 성립하는지 확인하세요.",
-    "currentValue": "회복탄력성은 외상 후 성장에 정적 영향을 미칠 것이다.",
-    "oldValue": "한부모가족 대학생",
-    "newValue": "한부모가족 경험이 있는 성인",
-    "needsReview": true,
-    "status": "pending",
-    "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
-   },
-   {
-    "id": "d893c958-f6ac-436b-b9b5-33f7459d7978",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "7cb787c0-45e1-4fcd-a9ae-7102dd668c98",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "proposalSection",
      "id": "purpose"
@@ -899,33 +737,177 @@
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "d8c32f73-6ba0-497a-b8f8-993335f5fdf6",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "865fa3a6-c4e6-45dc-872b-e042436aa035",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
-     "type": "subject",
-     "id": "92d0adc6-1eff-4183-9c70-0a99ccba28a5#exclusionCriteria"
+     "type": "hypothesis",
+     "id": "47921290-45ac-43fc-9134-0b596c6dcbde"
     },
-    "targetLabel": "연구 대상 · 제외 기준",
-    "reason": "연구 대상이(가) 바뀌면 같은 연구 대상 기록의 제외 기준도 일치해야 합니다.",
-    "currentValue": "휴학 중인 학생 (가상 예시)",
+    "targetLabel": "H3 연구가설",
+    "reason": "가설은 연구 대상 집단을 전제로 검증됩니다. 새 대상에서도 성립하는지 확인하세요.",
+    "currentValue": "회복탄력성은 외상 후 성장에 정적 영향을 미칠 것이다.",
     "oldValue": "한부모가족 대학생",
     "newValue": "한부모가족 경험이 있는 성인",
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    },
    {
-    "id": "e8e4077e-8751-437a-8cab-1d405a63ac95",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "id": "8b6ba6a7-70e8-45f3-98cd-9ee10a8141e6",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "project",
+     "id": "febb42c7-43e2-45da-a93b-d2727f779ca3#rq0"
+    },
+    "targetLabel": "연구 질문 1",
+    "reason": "질문 문장에 기존 표현 \"한부모가족 대학생\"이(가) 들어 있습니다.",
+    "currentValue": "한부모가족 대학생의 지각된 차별은 외상 후 성장과 어떤 관계가 있는가?",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "92e2d230-7daa-4802-9727-464affe67390",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "proposalSection",
+     "id": "background"
+    },
+    "targetLabel": "연구계획서 · 2. 연구 배경",
+    "reason": "이 문단은 위 항목에서 만들어집니다. 기존 버전은 그대로 보존되고, 새 버전을 만들면 이 문단이 달라집니다.",
+    "currentValue": "",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "9417c527-0062-4d11-8e63-6abda1ffe917",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "proposalSection",
+     "id": "hypotheses"
+    },
+    "targetLabel": "연구계획서 · 8. 연구가설",
+    "reason": "이 문단은 위 항목에서 만들어집니다. 기존 버전은 그대로 보존되고, 새 버전을 만들면 이 문단이 달라집니다.",
+    "currentValue": "",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "9de92b30-ffee-4133-9523-84b3788e6283",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "proposalSection",
+     "id": "literature"
+    },
+    "targetLabel": "연구계획서 · 9. 핵심 선행연구",
+    "reason": "이 문단은 위 항목에서 만들어집니다. 기존 버전은 그대로 보존되고, 새 버전을 만들면 이 문단이 달라집니다.",
+    "currentValue": "",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "ae1c6b43-1543-433e-b142-69ae0155863c",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "extension",
+     "id": "ethics"
+    },
+    "targetLabel": "연구윤리(IRB) 서류의 연구 대상 기재",
+    "reason": "연구윤리 관리는 후속 확장 영역입니다(현재 앱에 기능 없음). 심의 서류의 모집 대상·기준을 직접 확인하세요.",
+    "currentValue": "",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "b9b9de66-fd2d-4788-add4-301178a80ef2",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "literature",
+     "id": "7816ce70-61bc-4996-a761-258ab831288f"
+    },
+    "targetLabel": "L1 (가상 예시 문헌 A) 대학생의 지각된 차별과 회복탄력성의 관계",
+    "reason": "위 근거의 출처 문헌입니다. 문헌의 연구 대상과 새 연구 대상의 차이를 확인하세요. (이 문헌의 연구 대상: 대학생 (가상))",
+    "currentValue": "지각된 차별이 높을수록 회복탄력성이 낮았다는 가상의 결과",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "c9c794ed-b4bd-41dc-b071-bc26ea8cc2fd",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "proposalSection",
+     "id": "subject"
+    },
+    "targetLabel": "연구계획서 · 5. 연구 대상",
+    "reason": "이 문단은 위 항목에서 만들어집니다. 기존 버전은 그대로 보존되고, 새 버전을 만들면 이 문단이 달라집니다.",
+    "currentValue": "",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "cab9c29c-0018-4006-943d-7db19eb9aac0",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "evidence",
+     "id": "6ab49e7e-75d7-4c70-9a30-3feb457f606e"
+    },
+    "targetLabel": "E1 근거",
+    "reason": "가설에 연결된 근거입니다. 근거가 된 연구의 대상이 새 연구 대상에도 적용 가능한지 확인하세요.",
+    "currentValue": "지각된 차별과 회복탄력성 사이에 부적 상관이 보고되었다는 가상의 근거 문장",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "f0e849df-00a1-42b9-bde4-ab76a2bd49c3",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "target": {
      "type": "subject",
-     "id": "92d0adc6-1eff-4183-9c70-0a99ccba28a5#recruitmentCriteria"
+     "id": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b#recruitmentCriteria"
     },
     "targetLabel": "연구 대상 · 모집 기준",
     "reason": "연구 대상이(가) 바뀌면 같은 연구 대상 기록의 모집 기준도 일치해야 합니다.",
@@ -935,15 +917,33 @@
     "needsReview": true,
     "status": "pending",
     "note": "",
-    "updatedAt": "2026-11-22T02:30:16.735Z"
+    "updatedAt": "2026-11-22T11:27:59.992Z"
+   },
+   {
+    "id": "fb088eb5-dd2e-4c08-a71c-515d3ec5c33c",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
+    "target": {
+     "type": "subject",
+     "id": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b#exclusionCriteria"
+    },
+    "targetLabel": "연구 대상 · 제외 기준",
+    "reason": "연구 대상이(가) 바뀌면 같은 연구 대상 기록의 제외 기준도 일치해야 합니다.",
+    "currentValue": "휴학 중인 학생 (가상 예시)",
+    "oldValue": "한부모가족 대학생",
+    "newValue": "한부모가족 경험이 있는 성인",
+    "needsReview": true,
+    "status": "pending",
+    "note": "",
+    "updatedAt": "2026-11-22T11:27:59.992Z"
    }
   ],
   "proposalVersions": [
    {
-    "id": "018ccf14-b8a5-46a1-8dcb-fd1623f3c172",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
+    "id": "af2bac24-ffd0-4823-818c-f42b3fe825b7",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
     "versionNo": 1,
-    "createdAt": "2026-11-22T02:30:16.728Z",
+    "createdAt": "2026-11-22T11:27:59.982Z",
     "reason": "최초 작성 (가상 예시)",
     "feedbackId": null,
     "changeRequestId": null,
@@ -968,7 +968,7 @@
      },
      "variables": [
       {
-       "id": "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
+       "id": "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
        "code": "V1",
        "name": "지각된 차별",
        "role": "independent",
@@ -976,7 +976,7 @@
        "operationalDefinition": ""
       },
       {
-       "id": "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
+       "id": "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
        "code": "V2",
        "name": "회복탄력성",
        "role": "mediator",
@@ -984,7 +984,7 @@
        "operationalDefinition": ""
       },
       {
-       "id": "7e88df4f-3b7d-44bd-a2af-55d0ede489e3",
+       "id": "d37508cd-431f-4cd0-ab27-638665af0d8b",
        "code": "V3",
        "name": "외상 후 성장",
        "role": "dependent",
@@ -998,8 +998,8 @@
        "to": "외상 후 성장",
        "label": "H1",
        "note": "",
-       "fromId": "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-       "toId": "7e88df4f-3b7d-44bd-a2af-55d0ede489e3",
+       "fromId": "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+       "toId": "d37508cd-431f-4cd0-ab27-638665af0d8b",
        "moderatorIds": []
       },
       {
@@ -1007,8 +1007,8 @@
        "to": "회복탄력성",
        "label": "H2, H4",
        "note": "",
-       "fromId": "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
-       "toId": "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
+       "fromId": "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
+       "toId": "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
        "moderatorIds": []
       },
       {
@@ -1016,14 +1016,14 @@
        "to": "외상 후 성장",
        "label": "H3, H4",
        "note": "",
-       "fromId": "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
-       "toId": "7e88df4f-3b7d-44bd-a2af-55d0ede489e3",
+       "fromId": "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
+       "toId": "d37508cd-431f-4cd0-ab27-638665af0d8b",
        "moderatorIds": []
       }
      ],
      "hypotheses": [
       {
-       "id": "82854007-7dc7-4e53-89ac-8f3cacde3c4c",
+       "id": "f66d04ea-98de-450a-ab2a-6ec527b9b7d3",
        "code": "H1",
        "statement": "한부모가족 대학생의 지각된 차별은 외상 후 성장에 유의한 영향을 미칠 것이다.",
        "kind": "direct",
@@ -1033,7 +1033,7 @@
        ]
       },
       {
-       "id": "a0173f3d-11da-45f2-9e77-4cb7913c8d1b",
+       "id": "e0d39e57-0fb0-4eb1-825b-11aa7514e8fe",
        "code": "H2",
        "statement": "지각된 차별은 회복탄력성에 부적 영향을 미칠 것이다.",
        "kind": "direct",
@@ -1043,7 +1043,7 @@
        ]
       },
       {
-       "id": "11d519c8-8ddc-42fc-b8d5-285b3eb822fc",
+       "id": "47921290-45ac-43fc-9134-0b596c6dcbde",
        "code": "H3",
        "statement": "회복탄력성은 외상 후 성장에 정적 영향을 미칠 것이다.",
        "kind": "direct",
@@ -1053,7 +1053,7 @@
        ]
       },
       {
-       "id": "53db1db6-2aa4-44c1-858d-aabf32298985",
+       "id": "3fe350cd-745c-4170-b93b-f2525ae54474",
        "code": "H4",
        "statement": "회복탄력성은 지각된 차별과 외상 후 성장의 관계를 매개할 것이다.",
        "kind": "mediation",
@@ -1066,7 +1066,7 @@
      ],
      "keyLiterature": [
       {
-       "id": "04e7bd58-8e5e-458a-a81b-4521e026fd26",
+       "id": "7816ce70-61bc-4996-a761-258ab831288f",
        "code": "L1",
        "title": "(가상 예시 문헌 A) 대학생의 지각된 차별과 회복탄력성의 관계",
        "authors": "가상저자 가, 가상저자 나",
@@ -1090,7 +1090,7 @@
        ]
       },
       {
-       "id": "d0bafa2f-b890-4da0-ac6e-e788984b032e",
+       "id": "586ee437-c6b2-4d84-91c0-d822fbff6ee4",
        "code": "L2",
        "title": "(가상 예시 문헌 B) 회복탄력성과 외상 후 성장: 청년을 대상으로",
        "authors": "가상저자 다",
@@ -1122,20 +1122,20 @@
   ],
   "changeLog": [
    {
-    "id": "d3c65bde-2e91-4cb4-a204-f4b5ae8080fa",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.739Z",
+    "id": "46662ab0-bb31-41b9-be34-eab02364106a",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:28:00.000Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "evidence",
-    "entityId": "47cb5135-0a45-4e4e-aed3-8d35a3b8c901",
+    "entityId": "3eee5e23-ea2f-442d-b16c-47794f28c140",
     "entityLabel": "E6",
     "action": "create"
    },
    {
-    "id": "6e6a0646-3c8a-401f-984e-b3292d0183d4",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.738Z",
+    "id": "e82fad97-6ac9-47db-bcd2-c59a9e2308e6",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.998Z",
     "changes": [
      {
       "field": "연구 대상 · 연구 대상",
@@ -1148,16 +1148,16 @@
       "after": "2건"
      }
     ],
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "entityType": "subject",
-    "entityId": "92d0adc6-1eff-4183-9c70-0a99ccba28a5",
+    "entityId": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b",
     "entityLabel": "연구 대상 · 연구 대상",
     "action": "apply-change"
    },
    {
-    "id": "b3984383-f947-4866-8fca-bd7733916914",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.731Z",
+    "id": "61719f7d-edcf-4f27-9030-c6a8f27aab38",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.986Z",
     "changes": [
      {
       "field": "연구 대상 · 연구 대상",
@@ -1165,27 +1165,27 @@
       "after": "한부모가족 경험이 있는 성인"
      }
     ],
-    "changeRequestId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "changeRequestId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "entityType": "changeRequest",
-    "entityId": "a7bf01d0-3d91-43d2-bffc-95a9641723b4",
+    "entityId": "4ed440bb-57b3-4ad0-bca2-82bb4972ef50",
     "entityLabel": "CR1 연구 대상 · 연구 대상",
     "action": "create"
    },
    {
-    "id": "64b0c610-2cd1-4f0e-99f9-46dd95bef1d2",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.729Z",
+    "id": "f78e1037-2708-42e8-856b-043b6331107c",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.983Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "feedback",
-    "entityId": "8ce78d93-9963-4f6d-b296-6a89891a6341",
+    "entityId": "483cfb24-fbe7-4361-b767-d206cd650605",
     "entityLabel": "F1 피드백",
     "action": "create"
    },
    {
-    "id": "af515781-fda2-462d-a469-8d96681c24d4",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.728Z",
+    "id": "27b32e02-df99-4a4e-97ca-828b68653b58",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.982Z",
     "changes": [
      {
       "field": "변경 사유",
@@ -1195,201 +1195,190 @@
     ],
     "changeRequestId": null,
     "entityType": "proposalVersion",
-    "entityId": "018ccf14-b8a5-46a1-8dcb-fd1623f3c172",
+    "entityId": "af2bac24-ffd0-4823-818c-f42b3fe825b7",
     "entityLabel": "연구계획서 v1",
     "action": "create"
    },
    {
-    "id": "ff2ba51c-d2f0-42fc-80bb-8d76187bbb84",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.727Z",
+    "id": "d3b8a847-4084-4648-8f35-ce8495adc63b",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.980Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "meeting",
-    "entityId": "9066d4e4-3482-42b0-a0c6-fe6e8414bfe1",
+    "entityId": "218d26fb-504b-40b4-aa79-840b7629f9a0",
     "entityLabel": "M1 면담 준비",
     "action": "create"
    },
    {
-    "id": "d73e82bb-b824-4980-bfca-8812019df3a4",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.726Z",
+    "id": "a6ba0ae4-deaa-4f1b-aef7-91d6575ff8e8",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.979Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "evidence",
-    "entityId": "674aa62c-6451-4505-acad-00da865e6f03",
+    "entityId": "e784873f-027f-40d9-9602-ccd8279df170",
     "entityLabel": "E5",
     "action": "create"
    },
    {
-    "id": "62351c80-2024-4342-91c5-71b095251677",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.725Z",
+    "id": "2095e8be-4665-45b0-84d9-b72b9d346fb0",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.977Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "evidence",
-    "entityId": "5d689c8b-f221-4c26-9a6c-6e86d74b79e5",
+    "entityId": "0a27871d-599e-4782-8098-73dc9e616a33",
     "entityLabel": "E4",
     "action": "create"
    },
    {
-    "id": "6857dde8-c3d7-4c37-ae14-d52ff77f2a95",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.723Z",
+    "id": "b2af3db7-8307-4076-a4d2-fcfef4037435",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.975Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "evidence",
-    "entityId": "390be7b0-262c-4c8d-a4a7-ee00d5224a34",
+    "entityId": "adc8c3d1-c760-4d98-898d-45fd5c750b82",
     "entityLabel": "E3",
     "action": "create"
    },
    {
-    "id": "6860112a-5ff5-4641-97ed-dea34cb2438f",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.722Z",
+    "id": "5c1c2948-4458-4d41-88b7-62d4ab9162e5",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.974Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "evidence",
-    "entityId": "7fb22451-94ec-4701-8f07-a62d1f7db8c1",
+    "entityId": "f0dcf127-e069-4f25-a233-9295e5d4651e",
     "entityLabel": "E2",
     "action": "create"
    },
    {
-    "id": "b2ce97cd-d1bd-4bdf-a215-2277f96d4230",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.721Z",
+    "id": "026845f9-7e79-4e5f-bb69-54d915ca7e08",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.972Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "evidence",
-    "entityId": "ec6cf476-bb51-4ef1-b478-3128f619eb50",
+    "entityId": "6ab49e7e-75d7-4c70-9a30-3feb457f606e",
     "entityLabel": "E1",
     "action": "create"
    },
    {
-    "id": "e9dee53d-e290-4c65-b18b-edd9793fabf5",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.715Z",
+    "id": "418e73b9-6148-45c5-8888-1dd0cb199c47",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.966Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "literature",
-    "entityId": "31e1b3a4-f8c7-4dc9-b7b3-cf87f7098caf",
+    "entityId": "4cb1d45a-615c-4b26-9b17-63eb3d87dd2b",
     "entityLabel": "L3 (가상 예시 문헌 C) 차별 경험과 외상 후 성장의 관계에서 심리적 자원의 매개효과",
     "action": "create"
    },
    {
-    "id": "ae922235-0aa4-4dfc-abc9-ad5120febbca",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.714Z",
+    "id": "58588826-7bf4-4c11-b06a-d0a760a84386",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.963Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "literature",
-    "entityId": "d0bafa2f-b890-4da0-ac6e-e788984b032e",
+    "entityId": "586ee437-c6b2-4d84-91c0-d822fbff6ee4",
     "entityLabel": "L2 (가상 예시 문헌 B) 회복탄력성과 외상 후 성장: 청년을 대상으로",
     "action": "create"
    },
    {
-    "id": "e39fd73f-5ce7-4012-b729-3834cb507c13",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.712Z",
+    "id": "582149b2-c590-4864-93fa-caef2c594b70",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.962Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "literature",
-    "entityId": "04e7bd58-8e5e-458a-a81b-4521e026fd26",
+    "entityId": "7816ce70-61bc-4996-a761-258ab831288f",
     "entityLabel": "L1 (가상 예시 문헌 A) 대학생의 지각된 차별과 회복탄력성의 관계",
     "action": "create"
    },
    {
-    "id": "203657dc-9c14-4cdf-909a-083aa8888eee",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.711Z",
+    "id": "6ee76692-85b8-4d09-9b19-9f8c7292f651",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.961Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "hypothesis",
-    "entityId": "53db1db6-2aa4-44c1-858d-aabf32298985",
+    "entityId": "3fe350cd-745c-4170-b93b-f2525ae54474",
     "entityLabel": "H4",
     "action": "create"
    },
    {
-    "id": "9b9ffcfb-cbce-4206-b4fc-d87ec96fc893",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.710Z",
+    "id": "d67f4273-574c-479d-8c2f-3c946e5e7a89",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.960Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "hypothesis",
-    "entityId": "11d519c8-8ddc-42fc-b8d5-285b3eb822fc",
+    "entityId": "47921290-45ac-43fc-9134-0b596c6dcbde",
     "entityLabel": "H3",
     "action": "create"
    },
    {
-    "id": "242326cf-4e7b-49c0-8e86-012afc75820b",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.709Z",
+    "id": "78764bd9-183f-450b-8b5d-dc5673c3ded6",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.957Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "hypothesis",
-    "entityId": "a0173f3d-11da-45f2-9e77-4cb7913c8d1b",
+    "entityId": "e0d39e57-0fb0-4eb1-825b-11aa7514e8fe",
     "entityLabel": "H2",
     "action": "create"
    },
    {
-    "id": "99edd85b-693f-4592-a227-1da9e1bbdce5",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.707Z",
+    "id": "eb13e397-7991-4250-bd1b-0109f547bc54",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.955Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "hypothesis",
-    "entityId": "82854007-7dc7-4e53-89ac-8f3cacde3c4c",
+    "entityId": "f66d04ea-98de-450a-ab2a-6ec527b9b7d3",
     "entityLabel": "H1",
     "action": "create"
    },
    {
-    "id": "74b177d4-e2cf-429f-9f42-b03fad939860",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.706Z",
+    "id": "92d0a77f-2c3b-49cc-870e-bc6799b926c2",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.954Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "variable",
-    "entityId": "7e88df4f-3b7d-44bd-a2af-55d0ede489e3",
+    "entityId": "d37508cd-431f-4cd0-ab27-638665af0d8b",
     "entityLabel": "V3 외상 후 성장",
     "action": "create"
    },
    {
-    "id": "de4c182e-28d9-41bd-aebf-40a624a67363",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.705Z",
+    "id": "0770bc82-f015-4e10-a0fa-26befdf05ec4",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.953Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "variable",
-    "entityId": "2fdfcd56-0417-45a3-bdb9-1413ce9a349e",
+    "entityId": "34dffa00-0d72-4b3f-9df4-3b7a8b12aed5",
     "entityLabel": "V2 회복탄력성",
     "action": "create"
    },
    {
-    "id": "7befc99f-f125-47fe-9e28-09b7d45752cc",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.699Z",
+    "id": "08e782ad-bfde-455c-85a2-ebc6b11510fc",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.953Z",
     "changes": [],
     "changeRequestId": null,
     "entityType": "variable",
-    "entityId": "4d8f57e1-7013-40c3-9fff-81d2d70a5bc2",
+    "entityId": "f2a7a2f7-7528-4c8c-a7b0-27e82ea6a842",
     "entityLabel": "V1 지각된 차별",
     "action": "create"
    },
    {
-    "id": "6843e2b2-f182-4f1a-a647-9d81438b57a1",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.698Z",
-    "changes": [],
-    "changeRequestId": null,
-    "entityType": "project",
-    "entityId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "entityLabel": "한부모가족 대학생의 지각된 차별과 외상 후 성장의 관계에서 회복탄력성의 매개효과",
-    "action": "create"
-   },
-   {
-    "id": "a2500d91-0676-4d5f-b277-6b9d6b42986b",
-    "projectId": "97788a93-c138-418b-a5ba-d20c53ca327c",
-    "at": "2026-11-22T02:30:16.698Z",
+    "id": "7c7e1b24-82ec-4642-ba0a-dab4a9d7daae",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.952Z",
     "changes": [
      {
       "field": "연구 대상",
@@ -1419,11 +1408,26 @@
     ],
     "changeRequestId": null,
     "entityType": "subject",
-    "entityId": "92d0adc6-1eff-4183-9c70-0a99ccba28a5",
+    "entityId": "2dcf750e-b6cd-4473-8567-c2f7a1d7365b",
     "entityLabel": "연구 대상",
     "action": "update"
+   },
+   {
+    "id": "96f31147-e357-4c9b-a70b-4a6900b673a7",
+    "projectId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "at": "2026-11-22T11:27:59.951Z",
+    "changes": [],
+    "changeRequestId": null,
+    "entityType": "project",
+    "entityId": "febb42c7-43e2-45da-a93b-d2727f779ca3",
+    "entityLabel": "한부모가족 대학생의 지각된 차별과 외상 후 성장의 관계에서 회복탄력성의 매개효과",
+    "action": "create"
    }
   ]
  },
- "attachmentFiles": {}
+ "attachmentFiles": {},
+ "integrity": {
+  "algorithm": "SHA-256",
+  "hash": "03bf8203a2a3da357949e8b2aed3f502a4153f646dc524128b98f6b8f6083178"
+ }
 }

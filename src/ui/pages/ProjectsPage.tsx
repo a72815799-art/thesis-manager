@@ -17,7 +17,9 @@ export function ProjectsPage() {
   const [title, setTitle] = useState('');
   const [purpose, setPurpose] = useState('');
   const [busy, setBusy] = useState(false);
+  const [q, setQ] = useState('');
 
+  const match = (p: { title: string; purpose: string }) => !q.trim() || `${p.title} ${p.purpose}`.toLowerCase().includes(q.trim().toLowerCase());
   const submit = async () => {
     const p = await run(() => createProject({ title, purpose }), '프로젝트를 만들었습니다.');
     if (p) {
@@ -59,8 +61,14 @@ export function ProjectsPage() {
             <div><button className="btn primary" onClick={() => setCreating(true)}>새 프로젝트 만들기</button></div>
           </Empty>
         ) : (
+          <>
+          <div className="filters">
+            <input type="search" placeholder="프로젝트 제목·목적 검색" value={q} onChange={(e) => setQ(e.target.value)} data-testid="project-search" aria-label="프로젝트 검색" />
+            <span className="muted small" data-testid="project-count">{projects.filter(match).length} / {projects.length}개</span>
+          </div>
+          {projects.filter(match).length === 0 && <Empty title="검색 결과가 없습니다">다른 검색어를 입력해 보세요.</Empty>}
           <div className="grid c2" data-testid="project-list">
-            {projects.map((p) => (
+            {projects.filter(match).map((p) => (
               <Link key={p.id} to={`/p/${p.id}`} className="card project-card" data-testid="project-card">
                 <div className="row" style={{ marginBottom: 6 }}>
                   <span className="badge accent">{STAGE_LABEL[p.stage]}</span>
@@ -72,6 +80,7 @@ export function ProjectsPage() {
               </Link>
             ))}
           </div>
+          </>
         )}
       </div>
       {creating && (

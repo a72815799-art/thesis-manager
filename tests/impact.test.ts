@@ -161,4 +161,47 @@ describe('변경 요청 적용', () => {
     expect((await db.impactReviews.get(b.impactReviews[0].id))!.status).toBe('kept');
     await expect(repo.createChangeRequest(pid, { target: { type: 'variable', id: 'ghost', field: 'name' }, newValue: 'x', reason: 'y' })).rejects.toMatchObject({ code: 'invalid' });
   });
+
+  it('승인과 함께 새 버전을 만들면 이전 버전은 그대로이고 새 버전에 변경이 반영된다', async () => {
+    const pid = await seedDemo();
+    const b0 = await repo.loadBundle(pid);
+    const v1 = JSON.stringify(b0.proposalVersions[0]);
+    const r = await repo.applyChangeRequest(b0.changeRequests[0].id, { createVersionAfter: true });
+    const b = await repo.loadBundle(pid);
+    expect(b.proposalVersions).toHaveLength(2);
+    expect(JSON.stringify(b.proposalVersions[0])).toBe(v1);
+    expect(b.proposalVersions[1].id).toBe(r.newVersionId);
+    expect(b.proposalVersions[1].changeRequestId).toBe(b0.changeRequests[0].id);
+    expect(b.proposalVersions[1].feedbackId).toBe(b0.feedback[0].id);
+    expect(b.proposalVersions[1].snapshot.subject.population).toBe('한부모가족 경험이 있는 성인');
+    expect(b.proposalVersions[1].diffFromPrevious.map((d) => d.section)).toEqual(['5. 연구 대상']);
+  });
+
+  it('이전 계획서 버전의 내용은 저장소 수준에서 변경이 차단된다', async () => {
+    const pid = await seedDemo();
+    const v = (await repo.loadBundle(pid)).proposalVersions[0];
+    const before = JSON.stringify(v);
+    await expect(db.proposalVersions.update(v.id, { reason: '몰래 수정' })).rejects.toThrow('변경할 수 없습니다');
+    await expect(db.proposalVersions.put({ ...v, snapshot: { ...v.snapshot, title: '바뀐 제목' } })).rejects.toThrow('변경할 수 없습니다');
+    await expect(db.proposalVersions.where('projectId').equals(pid).modify((x) => { x.snapshot.subject.population = '다른 대상'; })).rejects.toThrow();
+    expect(JSON.stringify(await db.proposalVersions.get(v.id))).toBe(before);
+    // 허용되는 변경은 초안 → 확정뿐이며 되돌릴 수 없다
+    await repo.confirmProposalVersion(v.id);
+    expect((await db.proposalVersions.get(v.id))!.status).toBe('confirmed');
+    await expect(db.proposalVersions.update(v.id, { status: 'draft' })).rejects.toThrow('되돌릴 수 없습니다');
+    expect(JSON.stringify((await db.proposalVersions.get(v.id))!.snapshot)).toBe(JSON.stringify(v.snapshot));
+  });
+
+  it('연구 대상 변경 시 조작적 정의가 입력된 변수만 영향 항목에 포함된다', async () => {
+    const pid = await seedDemo();
+    let b = await repo.loadBundle(pid);
+    const target = { type: 'subject' as const, id: b.subject.id, field: 'population' };
+    expect(analyzeImpact(b, target, b.subject.population).filter((i) => i.target.type === 'variable')).toHaveLength(0);
+    const v = b.variables[1];
+    await repo.saveVariable(pid, { name: v.name, role: v.role, conceptualDefinition: v.conceptualDefinition, operationalDefinition: '대학생용 척도 총점', notes: '' }, v.id);
+    b = await repo.loadBundle(pid);
+    const items = analyzeImpact(b, target, b.subject.population);
+    expect(items.filter((i) => i.target.type === 'variable').map((i) => i.targetLabel)).toEqual(['V2 회복탄력성 · 조작적 정의']);
+    expect(items.some((i) => i.targetLabel.includes('6. 연구변수'))).toBe(true);
+  });
 });

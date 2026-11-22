@@ -197,6 +197,17 @@ export function analyzeImpact(bundle: ProjectBundle, target: ChangeTarget, oldVa
       () => '가설에 연결된 근거입니다. 근거가 된 연구의 대상이 새 연구 대상에도 적용 가능한지 확인하세요.',
       '위 근거의 출처 문헌입니다. 문헌의 연구 대상과 새 연구 대상의 차이를 확인하세요.',
     );
+    // 조작적 정의(측정 방식)가 입력된 변수만: 새 대상에게도 같은 방식으로 측정할 수 있는지
+    for (const v of variables) {
+      if (!v.operationalDefinition.trim()) continue;
+      add(
+        { type: 'variable', id: v.id },
+        `${v.code} ${v.name} · 조작적 정의`,
+        '조작적 정의(측정 방식)가 입력되어 있습니다. 새 연구 대상에게도 같은 방식으로 측정할 수 있는지 확인하세요.',
+        v.operationalDefinition,
+      );
+      sections.add('variables');
+    }
     add(
       { type: 'extension', id: 'scales' },
       '측정 척도의 대상 적합성',

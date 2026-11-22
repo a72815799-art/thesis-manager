@@ -26,6 +26,7 @@ export function ChangeRequestPage() {
   const [preview, setPreview] = useState<{ items: ImpactItem[]; recheck: number; stale: boolean; current: string | null } | null>(null);
   const [checked, setChecked] = useState(false);
   const [preserve, setPreserve] = useState(true);
+  const [makeNew, setMakeNew] = useState(true);
   const stamp = b.project.updatedAt + b.evidence.length + b.hypotheses.length;
   useEffect(() => {
     if (cr?.status !== 'draft') return;
@@ -47,12 +48,12 @@ export function ChangeRequestPage() {
       body: (
         <div className="stack">
           <div><div className="muted small">{cr.targetLabel}</div><div className="diff-before">{preview.current || '(비어 있음)'}</div><div className="diff-after" style={{ marginTop: 4 }}>{cr.newValue}</div></div>
-          <p>영향 항목 {preview.items.filter((i) => !i.direct).length}건이 검토 목록에 기록되고, ‘사용자 확인 완료’ 근거 {preview.recheck}건이 ‘재검토 필요’로 바뀝니다. 기존 계획서 버전은 바뀌지 않습니다.</p>
+          <p>영향 항목 {preview.items.filter((i) => !i.direct).length}건이 검토 목록에 기록되고, ‘사용자 확인 완료’ 근거 {preview.recheck}건이 ‘재검토 필요’로 바뀝니다. 기존 계획서 버전은 바뀌지 않습니다.{makeNew && ' 변경을 반영한 새 계획서 버전이 만들어집니다.'}</p>
         </div>
       ),
       confirmLabel: '적용',
     });
-    if (ok) await run(() => applyChangeRequest(cr.id, { preserveVersion: preserve, acceptCurrentValue: preview.stale }), '변경을 적용했습니다. 영향 항목을 하나씩 확인하세요.');
+    if (ok) await run(() => applyChangeRequest(cr.id, { preserveVersion: preserve, acceptCurrentValue: preview.stale, createVersionAfter: makeNew }), '변경을 적용했습니다. 영향 항목을 하나씩 확인하세요.');
   };
   const makeVersion = async () => {
     const v = await run(() => createProposalVersion(b.project.id, { reason: `${cr.code} 반영: ${cr.targetLabel} 변경`, changeRequestId: cr.id, feedbackId: cr.feedbackId }), '새 계획서 버전을 만들었습니다.');
@@ -103,6 +104,7 @@ export function ChangeRequestPage() {
             <div className="stack">
               {preview && preview.recheck > 0 && <div className="notice warn" data-testid="recheck-notice">적용하면 ‘사용자 확인 완료’ 근거 <strong>{preview.recheck}건</strong>이 ‘재검토 필요’로 바뀝니다.</div>}
               <label className="check"><input type="checkbox" checked={preserve} onChange={(e) => setPreserve(e.target.checked)} data-testid="preserve-version" /> 적용 직전 상태를 계획서 버전으로 보존 (최신 버전과 내용이 같으면 새로 만들지 않음)</label>
+              <label className="check"><input type="checkbox" checked={makeNew} onChange={(e) => setMakeNew(e.target.checked)} data-testid="make-new-version" /> 적용과 함께 변경을 반영한 새 계획서 버전 만들기 (이전 버전은 그대로 보존)</label>
               <label className="check"><input type="checkbox" checked={checked} onChange={(e) => setChecked(e.target.checked)} data-testid="impact-ack" /> 위 영향 항목을 확인했습니다</label>
               <div className="row">
                 <button className="btn primary" disabled={!checked || !preview} onClick={apply} data-testid="apply-cr">변경 적용</button>
@@ -124,7 +126,7 @@ export function ChangeRequestPage() {
                   {newVersion ? <>이 변경을 반영한 버전: <Link to="../proposal">v{newVersion.versionNo}</Link></> : '이 변경을 반영한 새 계획서 버전은 아직 없습니다.'}
                 </div>
               </div>
-              <button className="btn primary" onClick={makeVersion} data-testid="make-version">변경을 반영한 새 계획서 버전 만들기</button>
+              {!newVersion && <button className="btn primary" onClick={makeVersion} data-testid="make-version">변경을 반영한 새 계획서 버전 만들기</button>}
             </div>
           </div>
           <div className="table-wrap">

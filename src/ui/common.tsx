@@ -20,7 +20,7 @@ interface UiCtx {
   confirm: (o: ConfirmOpts) => Promise<boolean>;
   /** 저장 작업 실행: 성공/실패를 사용자에게 알리고 저장 상태를 갱신한다. */
   run: <T>(fn: () => Promise<T>, okMessage?: string) => Promise<T | undefined>;
-  saveState: { at: Date | null; failed: boolean };
+  saveState: { at: Date | null; failed: boolean; saving: boolean };
 }
 const Ctx = createContext<UiCtx | null>(null);
 export function useUi(): UiCtx {
@@ -38,7 +38,7 @@ export function errorMessage(e: unknown): string {
 export function UiProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [dialog, setDialog] = useState<(ConfirmOpts & { resolve: (v: boolean) => void }) | null>(null);
-  const [saveState, setSaveState] = useState<{ at: Date | null; failed: boolean }>({ at: null, failed: false });
+  const [saveState, setSaveState] = useState<{ at: Date | null; failed: boolean; saving: boolean }>({ at: null, failed: false, saving: false });
   const seq = useRef(0);
   const toast = useCallback((text: string, err = false) => {
     const id = ++seq.current;
@@ -48,13 +48,14 @@ export function UiProvider({ children }: { children: ReactNode }) {
   const confirm = useCallback((o: ConfirmOpts) => new Promise<boolean>((resolve) => setDialog({ ...o, resolve })), []);
   const run = useCallback(
     async <T,>(fn: () => Promise<T>, okMessage?: string) => {
+      setSaveState((s) => ({ ...s, saving: true }));
       try {
         const r = await fn();
-        setSaveState({ at: new Date(), failed: false });
+        setSaveState({ at: new Date(), failed: false, saving: false });
         if (okMessage) toast(okMessage);
         return r;
       } catch (e) {
-        if (!(e instanceof AppError)) setSaveState((s) => ({ ...s, failed: true }));
+        setSaveState((s) => ({ ...s, saving: false, failed: e instanceof AppError ? s.failed : true }));
         toast(errorMessage(e), true);
         return undefined;
       }

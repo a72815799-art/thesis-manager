@@ -104,12 +104,12 @@
     {
       "check": "LibreOffice 로 열기·PDF 변환: E2E_근거비교표.xlsx",
       "status": "pass",
-      "detail": "37365 bytes"
+      "detail": "37414 bytes"
     },
     {
       "check": "LibreOffice 로 열기·PDF 변환: 데모_근거비교표.xlsx",
       "status": "pass",
-      "detail": "46742 bytes"
+      "detail": "46563 bytes"
     }
   ]
 }

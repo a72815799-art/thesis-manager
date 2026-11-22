@@ -70,7 +70,7 @@ docs/evidence  E2E 결과·화면 캡처·내려받은 파일·LibreOffice 변�
 | 변수명 수정으로 가설 연결 끊김 | 이름이 아니라 id로 연결 | `types.ts` |
 | 사용 중인 변수 삭제 | 가설에서 쓰는 변수는 삭제 차단, 근거·문헌·피드백의 참조는 정리 | `repo.deleteVariable` |
 | 복원 후 ID 충돌 | 충돌 감지 시 전체 id 재발급(참조 포함) | `backup.planRestore`, `remapIds` |
-| 계획서 버전 손상 | 버전은 `add`로만 생성, snapshot 수정 함수 없음. 상태 전환(초안→확정)만 가능 | `repo.insertVersion`, `confirmProposalVersion` |
+| 계획서 버전 손상 | 버전은 `add`로만 생성. 저장소 미들웨어가 기존 버전의 내용 변경(update·put·modify)을 거부하고 초안→확정 전환만 허용 | `db.ts` immutable-proposal-versions, `repo.insertVersion` |
 | 저장 중 오류로 일부만 변경 | 모든 쓰기를 단일 Dexie 트랜잭션으로 실행 → 실패 시 전체 롤백 | `repo.tx` |
 | 프로젝트 간 데이터 혼합 | 모든 조회가 `projectId` 기준, 다른 프로젝트 id 연결 시 저장 거부 | `repo.save*` |
 | 손상된 백업 | 형식 → 스키마 버전 → zod → 참조 무결성 → 건수 검사 후에만 복원 가능 | `backup.parseBackup` |
@@ -85,7 +85,7 @@ docs/evidence  E2E 결과·화면 캡처·내려받은 파일·LibreOffice 변�
 
 | 변경 대상 | 영향 항목 |
 |---|---|
-| 연구 대상 | 같은 기록의 다른 칸(정의·모집 기준 등, 값이 있을 때), 기존 표현이 들어 있는 개요 문장, 모든 가설(모집단 전제), **가설에 연결된** 근거와 그 문헌, 후속 영역 안내(척도·IRB), 해당 계획서 문단 |
+| 연구 대상 | 같은 기록의 다른 칸(정의·모집 기준 등, 값이 있을 때), 조작적 정의가 입력된 변수, 기존 표현이 들어 있는 개요 문장, 모든 가설(모집단 전제), **가설에 연결된** 근거와 그 문헌, 후속 영역 안내(척도·IRB), 해당 계획서 문단 |
 | 변수 | 그 변수를 쓰는 가설, 그 변수·가설에 연결된 근거와 문헌, 관련 문헌으로 등록된 문헌, (이름 변경 시) 기존 이름이 들어 있는 문장 |
 | 가설 문장 | 그 가설의 근거와 문헌, 연결 변수(참고) |
 | 연구 개요 | 목적 변경 시 연구 질문, 제목 변경 시 제목에 나온 변수(참고) |
@@ -94,16 +94,20 @@ docs/evidence  E2E 결과·화면 캡처·내려받은 파일·LibreOffice 변�
 
 적용(`repo.applyChangeRequest`)은 사용자가 영향 항목 확인을 체크하고 확인 대화상자에서 승인해야 실행되며, 한 트랜잭션 안에서
 ① 적용 직전 상태를 계획서 버전으로 보존(최신 버전과 같으면 생략) ② 값 변경 ③ 영향 항목별 검토 기록 생성
-④ 영향받는 ‘사용자 확인 완료’ 근거를 ‘재검토 필요’로 전환 ⑤ 피드백의 수정 전/후 기록 ⑥ 수정 이력 기록을 수행합니다.
+④ 영향받는 ‘사용자 확인 완료’ 근거를 ‘재검토 필요’로 전환 ⑤ 피드백의 수정 전/후 기록 ⑥ 수정 이력 기록 ⑦ (기본 선택) 변경을 반영한 새 계획서 버전 생성을 수행합니다.
 
 ## 백업 형식
 
 ```json
-{ "format": "thesis-manager-backup", "schemaVersion": 1, "appVersion": "0.1.0", "exportedAt": "…",
+{ "format": "thesis-manager-backup", "schemaVersion": 2, "appVersion": "0.1.0", "exportedAt": "…",
   "isDemo": false, "counts": { … }, "filesIncluded": true,
   "bundle": { "project": …, "subject": …, "variables": [], … },
-  "attachmentFiles": { "<첨부 id>": "<base64>" } }
+  "attachmentFiles": { "<첨부 id>": "<base64>" },
+  "integrity": { "algorithm": "SHA-256", "hash": "<bundle + attachmentFiles 의 해시>" } }
 ```
+
+- 스키마 v1(최초)에는 `integrity`가 없습니다. v1 백업은 `MIGRATIONS[1]`을 거쳐 해시 검사 없이 복원됩니다.
+- v2 이상은 해시가 없거나 맞지 않으면 복원을 거부합니다. 해시는 키 순서와 무관한 직렬화(`canonicalJson`) 위에서 계산합니다(`src/domain/sha256.ts`).
 
 스키마를 바꿀 때: `SCHEMA_VERSION` 증가 → `db.ts`에 `version(n).upgrade()` 추가 → `backup.ts`의 `MIGRATIONS[n-1]`에 변환 함수 추가.
 

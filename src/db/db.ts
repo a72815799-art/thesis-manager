@@ -54,6 +54,38 @@ export class AppDB extends Dexie {
       proposalVersions: 'id, projectId',
       changeLog: 'id, projectId, at',
     });
+    // 계획서 버전은 한 번 만들면 내용을 바꿀 수 없다. 저장소 수준(DBCore 미들웨어)에서 차단한다.
+    // update / put / modify 모두 이 경로를 지난다. 허용: 초안 → 확정 전환(status, confirmedAt)뿐.
+    const strip = (v: ProposalVersion) => JSON.stringify({ ...v, status: '', confirmedAt: '' }, (_, x) =>
+      x && typeof x === 'object' && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map((k) => [k, x[k]])) : x,
+    );
+    this.use({
+      stack: 'dbcore',
+      name: 'immutable-proposal-versions',
+      create: (down) => ({
+        ...down,
+        table: (name) => {
+          const t = down.table(name);
+          if (name !== 'proposalVersions') return t;
+          return {
+            ...t,
+            mutate: (req) => {
+              if (req.type !== 'put') return t.mutate(req);
+              const values = req.values as ProposalVersion[];
+              return t.getMany({ trans: req.trans, keys: values.map((v) => v.id), cache: 'immutable' }).then((existing) => {
+                for (let i = 0; i < values.length; i++) {
+                  const old = existing[i] as ProposalVersion | undefined;
+                  if (!old) continue;
+                  if (strip(old) !== strip(values[i])) throw new Error('계획서 버전의 내용은 변경할 수 없습니다. 새 버전을 만드세요.');
+                  if (old.status === 'confirmed' && values[i].status !== 'confirmed') throw new Error('확정된 계획서 버전은 초안으로 되돌릴 수 없습니다.');
+                }
+                return t.mutate(req);
+              });
+            },
+          };
+        },
+      }),
+    });
   }
 }
 

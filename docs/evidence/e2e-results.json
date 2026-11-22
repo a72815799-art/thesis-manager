@@ -1,8 +1,8 @@
 {
-  "ranAt": "2026-11-22T02:29:27.723Z",
+  "ranAt": "2026-11-22T11:30:25.269Z",
   "browser": "Chromium (Playwright)",
-  "total": 34,
-  "pass": 34,
+  "total": 39,
+  "pass": 39,
   "fail": 0,
   "consoleErrors": [],
   "results": [
@@ -10,238 +10,273 @@
       "id": "S01",
       "name": "신규 프로젝트 생성",
       "status": "pass",
-      "ms": 477,
+      "ms": 492,
       "detail": ""
     },
     {
       "id": "S02",
       "name": "프로젝트 저장 후 재접속",
       "status": "pass",
-      "ms": 220,
+      "ms": 269,
       "detail": ""
     },
     {
       "id": "S03",
       "name": "연구변수 3개 등록",
       "status": "pass",
-      "ms": 573,
+      "ms": 597,
       "detail": ""
     },
     {
       "id": "S04",
       "name": "연구가설 등록 및 연구모형 반영",
       "status": "pass",
-      "ms": 347,
+      "ms": 355,
       "detail": ""
     },
     {
       "id": "S05",
       "name": "문헌 등록",
       "status": "pass",
-      "ms": 414,
+      "ms": 406,
       "detail": ""
     },
     {
       "id": "S06",
       "name": "문헌과 근거 연결 (+PDF 첨부)",
       "status": "pass",
-      "ms": 563,
+      "ms": 573,
       "detail": ""
     },
     {
       "id": "S07",
       "name": "근거 확인 상태 변경",
       "status": "pass",
-      "ms": 541,
+      "ms": 558,
       "detail": ""
     },
     {
       "id": "S08",
       "name": "연구계획서 생성 (v1)",
       "status": "pass",
-      "ms": 725,
+      "ms": 711,
       "detail": ""
     },
     {
       "id": "S09",
       "name": "DOCX 다운로드 및 내용 검증 (v1)",
       "status": "pass",
-      "ms": 738,
+      "ms": 727,
       "detail": "표 5개, 연구모형 그림 포함"
     },
     {
       "id": "S10",
       "name": "지도교수 피드백 등록 (연구 데이터 불변)",
       "status": "pass",
-      "ms": 544,
+      "ms": 545,
       "detail": ""
     },
     {
       "id": "S11",
       "name": "연구 대상 변경 요청",
       "status": "pass",
-      "ms": 307,
+      "ms": 311,
       "detail": ""
     },
     {
       "id": "S12",
       "name": "변경 영향 항목 확인 (연결 관계 기반)",
       "status": "pass",
-      "ms": 86,
+      "ms": 96,
       "detail": ""
     },
     {
       "id": "S13",
       "name": "사용자 승인 후 변경 적용",
       "status": "pass",
-      "ms": 916,
+      "ms": 971,
       "detail": ""
     },
     {
       "id": "S14",
       "name": "기존 계획서 버전 보존 확인",
       "status": "pass",
-      "ms": 562,
+      "ms": 535,
       "detail": ""
     },
     {
       "id": "S15",
-      "name": "새 계획서 생성 (v2) 및 차이 기록",
+      "name": "새 계획서(v2: 승인 시 자동 생성) 확인 및 차이 기록",
       "status": "pass",
-      "ms": 1230,
+      "ms": 1179,
       "detail": ""
     },
     {
       "id": "S16",
       "name": "XLSX 근거표 다운로드 및 내용 검증",
       "status": "pass",
-      "ms": 361,
+      "ms": 340,
       "detail": "3행 검증"
     },
     {
       "id": "S17",
       "name": "프로젝트 전체 백업",
       "status": "pass",
-      "ms": 313,
+      "ms": 333,
       "detail": ""
     },
     {
       "id": "S18",
       "name": "백업 복원 (삭제 후 복원)",
       "status": "pass",
-      "ms": 288,
+      "ms": 354,
       "detail": ""
     },
     {
       "id": "S19",
       "name": "복원된 연결 관계 검증",
       "status": "pass",
-      "ms": 1186,
+      "ms": 1184,
       "detail": "ID·관계 동일 (엔터티 13종 대조)"
     },
     {
       "id": "S20",
       "name": "오류 없이 재접속",
       "status": "pass",
-      "ms": 382,
+      "ms": 412,
       "detail": ""
     },
     {
       "id": "X01",
       "name": "필수값 누락 시 저장 거부",
       "status": "pass",
-      "ms": 658,
+      "ms": 688,
       "detail": ""
     },
     {
       "id": "X02",
       "name": "중복 데이터 거부",
       "status": "pass",
-      "ms": 844,
+      "ms": 855,
       "detail": ""
     },
     {
       "id": "X03",
       "name": "잘못된 파일 거부 (PDF 아님 / 백업 아님)",
       "status": "pass",
-      "ms": 339,
+      "ms": 386,
       "detail": ""
     },
     {
       "id": "X04",
       "name": "손상된 백업 거부 (기존 데이터 유지)",
       "status": "pass",
-      "ms": 94,
+      "ms": 126,
       "detail": ""
     },
     {
       "id": "X05",
       "name": "같은 프로젝트 복원 시 덮어쓰기 확인 / 사본 복원",
       "status": "pass",
-      "ms": 503,
+      "ms": 558,
       "detail": ""
     },
     {
       "id": "X06",
       "name": "여러 프로젝트 간 데이터 분리",
       "status": "pass",
-      "ms": 324,
+      "ms": 343,
       "detail": ""
     },
     {
       "id": "X07",
       "name": "삭제된 문헌의 참조 정리",
       "status": "pass",
-      "ms": 881,
+      "ms": 938,
       "detail": ""
     },
     {
       "id": "X08",
       "name": "저장 실패 안내 및 데이터 보존",
       "status": "pass",
-      "ms": 358,
+      "ms": 375,
       "detail": ""
     },
     {
       "id": "X09",
       "name": "백업 복원 중 실패 시 기존 데이터 유지",
       "status": "pass",
-      "ms": 1155,
+      "ms": 1226,
       "detail": ""
     },
     {
       "id": "X10",
       "name": "긴 한국어 텍스트 입력·표시·내보내기",
       "status": "pass",
-      "ms": 1190,
+      "ms": 1243,
       "detail": ""
     },
     {
       "id": "X11",
       "name": "빈 프로젝트: 모든 화면과 내보내기",
       "status": "pass",
-      "ms": 2931,
+      "ms": 2979,
+      "detail": ""
+    },
+    {
+      "id": "X12",
+      "name": "PDF 첨부 누락 백업: 복원 후 \"참조만 저장\"으로 표시",
+      "status": "pass",
+      "ms": 558,
+      "detail": ""
+    },
+    {
+      "id": "X13",
+      "name": "저장하지 않은 입력 보호 (메뉴 이동 전 확인)",
+      "status": "pass",
+      "ms": 527,
+      "detail": ""
+    },
+    {
+      "id": "X14",
+      "name": "같은 백업 반복 복원: ID 충돌·중복 없음",
+      "status": "pass",
+      "ms": 1810,
+      "detail": ""
+    },
+    {
+      "id": "P01",
+      "name": "프로젝트 목록 검색",
+      "status": "pass",
+      "ms": 96,
+      "detail": ""
+    },
+    {
+      "id": "K01",
+      "name": "키보드만으로 프로젝트 생성·삭제 확인 취소",
+      "status": "pass",
+      "ms": 208,
       "detail": ""
     },
     {
       "id": "D01",
       "name": "가상 데모: 가상 예시 표시와 영향 분석 사례",
       "status": "pass",
-      "ms": 3532,
+      "ms": 3695,
       "detail": ""
     },
     {
       "id": "R01",
       "name": "반응형: 태블릿·모바일 기본 사용",
       "status": "pass",
-      "ms": 1130,
+      "ms": 1216,
       "detail": ""
     },
     {
       "id": "Z01",
       "name": "전체 실행 중 예상치 못한 콘솔 오류 없음",
       "status": "pass",
-      "ms": 0,
+      "ms": 1,
       "detail": ""
     }
   ]

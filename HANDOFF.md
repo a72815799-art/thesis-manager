@@ -1,5 +1,7 @@
 # 인계 문서
 
+> 이 문서와 테스트 결과는 **개발자(개발 담당 AI)의 자기 보고**입니다. 독립 검수(GPT 등)는 별개의 절차이며, 요구사항별 대조는 [REQUIREMENTS_MATRIX.md](REQUIREMENTS_MATRIX.md), 현재 상태는 [DEVELOPMENT_STATE.md](DEVELOPMENT_STATE.md)를 기준으로 하세요.
+
 ## A. 실행 정보
 
 | 항목 | 내용 |
@@ -8,7 +10,7 @@
 | 작업 브랜치 | `ccr-2ab153d2-c6zv5c` (기본 브랜치 `main`은 건드리지 않음) |
 | 프로젝트 위치 | `projects/thesis-manager/` |
 | 최종 커밋 | 이 브랜치의 최신 커밋 (`git log -1 --format=%H -- projects/thesis-manager`) |
-| PR | 만들지 않음 (요청 시 생성) |
+| PR | 1차: #15 (병합됨) · 2차 보완: Draft PR (DEVELOPMENT_STATE.md 참고) |
 | 설치 | `cd projects/thesis-manager && npm install` |
 | 실행 | `npm run dev` → http://localhost:5173 |
 | 빌드 | `npm run build` → `dist/` |
@@ -104,7 +106,7 @@ TEST_REPORT.md 의 “증거 자료 위치” 참고. 요약:
 | 10 | XLSX 생성 | 충족 (MS Excel 직접 확인은 미검증) | S16, `verify_outputs.py` |
 | 11 | 백업·복원 | 충족 | S17~S19, X04, X05, X09 |
 | 12 | 재접속 후 데이터·연결 유지 | 충족 | S02, S20 |
-| 13 | 필수 브라우저 테스트 통과 | 충족 (Chromium 한정) | 34/34 |
+| 13 | 필수 브라우저 테스트 통과 | 충족 (Chromium 한정) | 39/39 |
 | 14 | 테스트 결과·증거 제공 | 충족 | `docs/evidence/` |
 | 15 | GitHub에 코드·기록 보존 | 충족 | 작업 브랜치 푸시 |
 
@@ -121,7 +123,7 @@ TEST_REPORT.md 의 “증거 자료 위치” 참고. 요약:
 ## 작업 재개 안내
 
 - 마지막 성공 단계: Phase 5 (통합 검증·문서화) 완료
-- 마지막 테스트 결과: 타입 검사 통과, 단위 35/35, E2E 34/34, 파일 검증 22/22
+- 마지막 테스트 결과: 타입 검사 통과, 단위 43/43, E2E 39/39, 파일 검증 22/22
 - 다음 실행 명령: `cd projects/thesis-manager && npm install && npm run build && npm test && npm run e2e`
 - 주의: E2E는 4188 포트를 사용합니다. 컨테이너에 UTF-8 로캘이 없으면 한글 파일명이 깨지므로 스크립트가 브라우저를 `C.UTF-8`로 실행합니다.
 - 남은 일: KNOWN_ISSUES.md 의 “확인 필요”와 “기능상 한계” 1·2번, DEVELOPMENT_PLAN.md 의 다음 단계

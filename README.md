@@ -34,8 +34,8 @@ npm run preview    # http://localhost:4173 에서 dist/ 확인
 
 ```bash
 npm run typecheck      # TypeScript 검사
-npm test               # 단위 테스트 35개 (Vitest + fake-indexeddb)
-npm run build && npm run e2e   # 브라우저 E2E 34단계 (Playwright + Chromium)
+npm test               # 단위 테스트 43개 (Vitest + fake-indexeddb)
+npm run build && npm run e2e   # 브라우저 E2E 39단계 (Playwright + Chromium)
 npm run verify:files   # 내려받은 DOCX/XLSX/백업을 python-docx·openpyxl·LibreOffice로 독립 검증
 ```
 
@@ -62,6 +62,9 @@ npm run verify:files   # 내려받은 DOCX/XLSX/백업을 python-docx·openpyxl�
 
 | 문서 | 내용 |
 |---|---|
+| [CLAUDE.md](CLAUDE.md) | 개발 원칙, 금지사항, 새 세션 재개 절차 |
+| [DEVELOPMENT_STATE.md](DEVELOPMENT_STATE.md) | 현재 단계, 완료·미검증 기능, 다음 작업 |
+| [REQUIREMENTS_MATRIX.md](REQUIREMENTS_MATRIX.md) | 요구사항별 구현·테스트·증거·상태 |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | 기술 선택 이유, 데이터 모델, 무결성·영향 분석 설계 |
 | [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md) | 단계별 진행 결과와 후속(5~8 영역) 계획 |
 | [TEST_REPORT.md](TEST_REPORT.md) | 단위·E2E·파일 검증 결과와 증거 위치 |

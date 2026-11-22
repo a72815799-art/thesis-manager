@@ -972,8 +972,8 @@ export async function previewChangeRequest(id: ID) {
  */
 export async function applyChangeRequest(
   id: ID,
-  opts: { preserveVersion?: boolean; acceptCurrentValue?: boolean } = {},
-): Promise<{ reviews: number; rechecked: number; preservedVersionId: ID | null }> {
+  opts: { preserveVersion?: boolean; acceptCurrentValue?: boolean; createVersionAfter?: boolean } = {},
+): Promise<{ reviews: number; rechecked: number; preservedVersionId: ID | null; newVersionId: ID | null }> {
   const preserve = opts.preserveVersion ?? true;
   return tx(async () => {
     const cr = await db.changeRequests.get(id);
@@ -1070,8 +1070,15 @@ export async function applyChangeRequest(
       ],
       changeRequestId: cr.id,
     });
+    // 6) (선택) 변경을 반영한 새 계획서 버전 생성 — 이전 버전은 그대로 둔다
+    let newVersionId: ID | null = null;
+    if (opts.createVersionAfter) {
+      const after = await loadBundle(cr.projectId);
+      const v = await insertVersion(after, { reason: `${cr.code} 반영: ${cr.targetLabel} 변경`, feedbackId: cr.feedbackId, changeRequestId: cr.id });
+      newVersionId = v.id;
+    }
     await touchProject(cr.projectId);
-    return { reviews: reviews.length, rechecked: recheckIds.length, preservedVersionId };
+    return { reviews: reviews.length, rechecked: recheckIds.length, preservedVersionId, newVersionId };
   });
 }
 

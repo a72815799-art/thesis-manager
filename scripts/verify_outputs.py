@@ -53,7 +53,7 @@ wd = openpyxl.load_workbook(FILES / "데모_근거비교표.xlsx")["근거 비�
 check("XLSX 데모: 첫 행 가상 예시 표시", "가상 예시 데이터" in str(wd.cell(1, 1).value))
 
 bk = json.loads((FILES / "E2E_백업.json").read_text(encoding="utf-8"))
-check("백업: 형식·스키마 버전", bk["format"] == "thesis-manager-backup" and bk["schemaVersion"] == 1)
+check("백업: 형식·스키마 버전", bk["format"] == "thesis-manager-backup" and bk["schemaVersion"] == 2 and len(bk["integrity"]["hash"]) == 64)
 b = bk["bundle"]
 lit = {x["id"] for x in b["literature"]}; hyp = {x["id"] for x in b["hypotheses"]}; var = {x["id"] for x in b["variables"]}
 check("백업: 근거의 문헌·가설·변수 참조가 모두 유효", all(e["literatureId"] in lit and set(e["hypothesisIds"]) <= hyp and set(e["variableIds"]) <= var for e in b["evidence"]))

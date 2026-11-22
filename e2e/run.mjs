@@ -257,6 +257,7 @@ await step('S08', '연구계획서 생성 (v1)', async () => {
   await tid('m-save').click();
   await tid('meeting-form').waitFor({ state: 'detached' });
   assert((await tid('sheet-checks').innerText()).includes('대학생으로 한정'), '면담용 요약에 확인 사항이 없음');
+  assert((await tid('sheet-issues').count()) === 1, '면담용 요약에 미해결 쟁점 영역이 없음');
   await shot('05-meeting-sheet');
   await go('proposal');
   assert((await tid('proposal-preview').innerText()).includes(OLD_SUBJECT), '미리보기에 연구 대상이 없음');
@@ -321,6 +322,7 @@ await step('S12', '변경 영향 항목 확인 (연결 관계 기반)', async ()
 });
 
 await step('S13', '사용자 승인 후 변경 적용', async () => {
+  assert(await tid('make-new-version').isChecked(), '승인 시 새 버전 만들기가 기본 선택이 아님');
   await tid('impact-ack').check();
   await tid('apply-cr').click();
   await tid('confirm-ok').click();
@@ -346,7 +348,9 @@ await step('S13', '사용자 승인 후 변경 적용', async () => {
 
 await step('S14', '기존 계획서 버전 보존 확인', async () => {
   await go('proposal');
-  assert((await tid('version-state').innerText()).includes('다릅니다'), '현재 데이터와 최신 버전 차이 안내가 없음');
+  // 승인과 함께 v2 가 자동으로 만들어졌고, v1 은 그대로여야 한다
+  await tid('version-2').waitFor();
+  assert((await tid('version-state').innerText()).includes('최신 버전(v2)과 같습니다'), '승인 후 새 버전이 현재 데이터와 일치하지 않음');
   await tid('version-1').getByTestId('toggle-version').click();
   const v1 = await tid('version-1').innerText();
   assert(v1.includes(OLD_SUBJECT) && !v1.includes(NEW_SUBJECT), 'v1 내용이 변경됨');
@@ -358,11 +362,12 @@ await step('S14', '기존 계획서 버전 보존 확인', async () => {
   await tid('version-1').getByTestId('toggle-version').click();
 });
 
-await step('S15', '새 계획서 생성 (v2) 및 차이 기록', async () => {
+await step('S15', '새 계획서(v2: 승인 시 자동 생성) 확인 및 차이 기록', async () => {
   await go('feedback');
   await tid('open-CR1').click();
-  await tid('make-version').click();
-  await page.waitForURL(/\/proposal$/);
+  await page.getByText('이 변경을 반영한 버전').waitFor();
+  assert((await tid('make-version').count()) === 0, '이미 새 버전이 있는데 버전 만들기 버튼이 다시 표시됨');
+  await go('proposal');
   await tid('version-2').waitFor();
   await tid('version-2').getByTestId('toggle-version').click();
   const diff = await tid('version-2').getByTestId('version-diff').innerText();
@@ -408,7 +413,8 @@ await step('S17', '프로젝트 전체 백업', async () => {
   const f = await download(() => tid('download-backup').click(), 'E2E_백업.json');
   backupPath = f.path;
   const b = JSON.parse(readFileSync(f.path, 'utf8'));
-  assert(b.format === 'thesis-manager-backup' && b.schemaVersion === 1, '백업 형식·스키마 버전 오류');
+  assert(b.format === 'thesis-manager-backup' && b.schemaVersion === 2, '백업 형식·스키마 버전 오류');
+  assert(b.integrity?.algorithm === 'SHA-256' && /^[0-9a-f]{64}$/.test(b.integrity.hash), '백업에 무결성 해시가 없음');
   assert(b.bundle.variables.length === 3 && b.bundle.hypotheses.length === 2 && b.bundle.evidence.length === 2 && b.bundle.proposalVersions.length === 2, '백업 항목 수 오류');
   assert(b.bundle.impactReviews.length > 0 && b.bundle.feedback.length === 1 && b.bundle.changeRequests.length === 1, '피드백·영향 검토 누락');
   assert(Object.keys(b.attachmentFiles).length === 1, '첨부파일 본문 누락');
@@ -549,6 +555,11 @@ await step('X04', '손상된 백업 거부 (기존 데이터 유지)', async () 
   broken.bundle.evidence[0].literatureId = 'missing-literature';
   await tid('restore-input').setInputFiles({ name: '끊어진참조.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(broken)) });
   assert((await tid('restore-error').innerText()).includes('연결 관계가 손상'), '끊어진 참조 안내 오류');
+  // 건수·형식은 그대로 두고 내용만 한 글자 바꾼 백업 → 무결성 해시 불일치
+  const tampered = JSON.parse(text);
+  tampered.bundle.evidence[0].content += '!';
+  await tid('restore-input').setInputFiles({ name: '내용변조.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(tampered)) });
+  assert((await tid('restore-error').innerText()).includes('무결성 검증에 실패'), '내용이 바뀐 백업 안내 오류');
   const newer = { ...JSON.parse(text), schemaVersion: 7 };
   await tid('restore-input').setInputFiles({ name: '미래버전.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(newer)) });
   assert((await tid('restore-error').innerText()).includes('더 최신 버전'), '스키마 버전 안내 오류');
@@ -740,6 +751,126 @@ await step('X11', '빈 프로젝트: 모든 화면과 내보내기', async () =>
   assert((await countStore('variables')) === 6, '빈 프로젝트에 다른 프로젝트 데이터가 섞임');
   await go('dashboard');
   assert((await tid('stat-연구변수').innerText()).startsWith('0'), '빈 프로젝트 대시보드에 다른 프로젝트 수치가 보임');
+});
+
+
+await step('X12', 'PDF 첨부 누락 백업: 복원 후 "참조만 저장"으로 표시', async () => {
+  await page.goto(projectUrl + '/data');
+  await tid('backup-files').uncheck();
+  const f = await download(() => tid('download-backup').click(), 'E2E_백업_PDF미포함.json');
+  const b = JSON.parse(readFileSync(f.path, 'utf8'));
+  assert(b.filesIncluded === false && Object.keys(b.attachmentFiles).length === 0, 'PDF 미포함 백업에 파일 본문이 들어 있음');
+  assert(b.bundle.attachments.some((a) => a.storage === 'stored'), '테스트 전제 오류: 저장된 첨부가 없음');
+  const blobsBefore = await countStore('attachmentBlobs');
+  await tid('open-restore').click();
+  await tid('restore-input').setInputFiles(f.path);
+  assert((await tid('restore-summary').innerText()).includes('첨부파일 본문 미포함'), '복원 전 요약에 첨부 미포함 표시가 없음');
+  await tid('restore-copy').click();
+  await page.getByTestId('toast-ok').filter({ hasText: '참조 정보만 복원' }).waitFor();
+  await page.waitForURL((u) => /\/p\/.+/.test(u.hash) && !u.href.startsWith(projectUrl));
+  await go('literature');
+  await tid('literature-L1').locator('a').first().click();
+  const rows = await tid('attachment-row').allInnerTexts();
+  assert(rows.length === 2 && rows.every((r) => r.includes('참조만 저장')), `파일 본문이 없는데 저장됨으로 표시: ${rows}`);
+  assert(rows.some((r) => r.includes('참조 정보만 복원')), '참조만 복원되었다는 메모가 없음');
+  assert((await page.getByText('내려받기').count()) === 0, '본문이 없는 첨부에 내려받기 버튼이 표시됨');
+  assert((await countStore('attachmentBlobs')) === blobsBefore, '파일 본문 수가 달라짐');
+});
+
+await step('X13', '저장하지 않은 입력 보호 (메뉴 이동 전 확인)', async () => {
+  await page.goto(projectUrl + '/overview');
+  await tid('f-method').waitFor();
+  const original = await tid('f-method').inputValue();
+  await tid('f-method').fill('저장하지 않은 방법 수정');
+  let asked = 0;
+  const dismiss = async (d) => { asked++; await d.dismiss(); };
+  page.on('dialog', dismiss);
+  await tid('nav-model').click();
+  await page.waitForTimeout(200);
+  page.off('dialog', dismiss);
+  assert(asked === 1, '저장하지 않은 변경이 있는데 이동 전 확인을 묻지 않음');
+  assert(page.url().endsWith('/overview') && (await tid('f-method').inputValue()) === '저장하지 않은 방법 수정', '취소했는데 이동했거나 입력이 사라짐');
+  const accept = async (d) => { await d.accept(); };
+  page.on('dialog', accept);
+  await tid('nav-model').click();
+  await page.waitForURL(/\/model$/);
+  page.off('dialog', accept);
+  await go('overview');
+  assert((await tid('f-method').inputValue()) === original, '저장하지 않고 이동했는데 값이 저장됨');
+});
+
+await step('X14', '같은 백업 반복 복원: ID 충돌·중복 없음', async () => {
+  await page.goto(projectUrl + '/data');
+  const before = { p: await countStore('projects'), e: await countStore('evidence'), v: await countStore('proposalVersions') };
+  // 덮어쓰기 2회 → 프로젝트 수와 항목 수가 늘지 않는다
+  const own = await download(() => tid('download-backup').click(), 'E2E_백업_반복복원용.json');
+  for (let i = 0; i < 2; i++) {
+    await tid('open-restore').click();
+    await tid('restore-input').setInputFiles(own.path);
+    await tid('restore-overwrite').click();
+    await tid('confirm-ok').click();
+    await page.getByTestId('toast-ok').filter({ hasText: '복원했습니다' }).last().waitFor();
+    await tid('restore-dialog').waitFor({ state: 'detached' });
+    await go('data');
+  }
+  assert((await countStore('projects')) === before.p && (await countStore('evidence')) === before.e && (await countStore('proposalVersions')) === before.v, '덮어쓰기 반복 복원으로 데이터가 중복됨');
+  // 사본 2회 → 매번 새 프로젝트, 제목이 서로 다름
+  const urls = new Set([projectUrl]);
+  for (let i = 0; i < 2; i++) {
+    await page.goto(projectUrl + '/data');
+    await tid('open-restore').click();
+    await tid('restore-input').setInputFiles(own.path);
+    await tid('restore-copy').click();
+    await page.waitForURL((u) => /\/p\/.+/.test(u.hash) && !urls.has(u.href.replace(/\/[a-z]*$/, '')) && !u.href.startsWith(projectUrl));
+    urls.add(page.url());
+    await go('data');
+    await tid('run-check').click();
+    await tid('check-ok').waitFor();
+  }
+  assert(urls.size === 3, '사본 복원이 같은 프로젝트로 들어감');
+  assert((await countStore('projects')) === before.p + 2, '사본 복원 후 프로젝트 수 오류');
+  await page.goto(BASE);
+  await tid('project-card').first().waitFor();
+  const titles = await tid('project-card').locator('h2').allInnerTexts();
+  assert(new Set(titles).size === titles.length, `프로젝트 제목이 중복됨: ${titles}`);
+});
+
+await step('P01', '프로젝트 목록 검색', async () => {
+  await page.goto(BASE);
+  await tid('project-card').first().waitFor();
+  const total = await tid('project-card').count();
+  await tid('project-search').fill('빈 프로젝트 점검');
+  assert((await tid('project-card').count()) === 1, '검색 결과 수 오류');
+  assert((await tid('project-count').innerText()).startsWith(`1 / ${total}`), '검색 건수 표시 오류');
+  await tid('project-search').fill('존재하지않는검색어');
+  await page.getByText('검색 결과가 없습니다').waitFor();
+  await tid('project-search').fill('');
+  assert((await tid('project-card').count()) === total, '검색어를 지워도 목록이 돌아오지 않음');
+});
+
+await step('K01', '키보드만으로 프로젝트 생성·삭제 확인 취소', async () => {
+  await page.goto(BASE);
+  await tid('new-project').focus();
+  await page.keyboard.press('Enter');
+  await tid('project-title').waitFor();
+  assert(await tid('project-title').evaluate((el) => el === document.activeElement), '입력 창을 열었을 때 첫 입력란에 초점이 가지 않음');
+  await page.keyboard.type('키보드로 만든 프로젝트');
+  await page.keyboard.press('Tab');
+  await page.keyboard.type('키보드 입력 목적');
+  await page.keyboard.press('Tab'); // 취소
+  await page.keyboard.press('Tab'); // 만들기
+  assert(await tid('project-create').evaluate((el) => el === document.activeElement), 'Tab 순서가 입력 → 취소 → 만들기가 아님');
+  await page.keyboard.press('Enter');
+  await page.waitForURL(/\/p\/.+\/overview/);
+  assert((await tid('f-title').inputValue()) === '키보드로 만든 프로젝트', '키보드 입력이 저장되지 않음');
+  // Esc 로 입력 창 닫기, 확인 대화상자는 기본 초점이 확인 버튼
+  await tid('nav-model').focus();
+  await page.keyboard.press('Enter');
+  await tid('add-variable').focus();
+  await page.keyboard.press('Enter');
+  await tid('variable-form').waitFor();
+  await page.keyboard.press('Escape');
+  await tid('variable-form').waitFor({ state: 'detached' });
 });
 
 /* ───────────── 데모 · 반응형 ───────────── */

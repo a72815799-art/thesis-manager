@@ -5,6 +5,7 @@ import { updateProject, updateSubject } from '../../db/repo';
 import { Milestone, ProjectStage, STAGE_LABEL } from '../../domain/types';
 import { useBundle } from '../App';
 import { Field, ListEditor, TextArea, TextInput, fmtDate, useUi } from '../common';
+import { setUnsaved } from '../unsaved';
 
 export function OverviewPage() {
   const b = useBundle();
@@ -27,6 +28,10 @@ export function OverviewPage() {
     setS(initS());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [b.project.updatedAt, b.subject.updatedAt]);
+  useEffect(() => {
+    setUnsaved(dirty);
+    return () => setUnsaved(false);
+  }, [dirty]);
   useEffect(() => {
     if (!dirty) return;
     const h = (e: BeforeUnloadEvent) => e.preventDefault();

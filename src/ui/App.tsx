@@ -5,6 +5,7 @@ import { loadBundle } from '../db/repo';
 import { computeStats } from '../domain/progress';
 import { ProjectBundle } from '../domain/types';
 import { Empty, Loading, useUi } from './common';
+import { confirmLeave } from './unsaved';
 import { ChangeRequestPage } from './pages/ChangeRequestPage';
 import { Dashboard } from './pages/Dashboard';
 import { DataPage } from './pages/DataPage';
@@ -86,11 +87,11 @@ function ProjectLayout() {
   return (
     <div className="shell">
       <aside className="sidebar no-print">
-        <NavLink to="/" className="brand">논문 연구관리</NavLink>
+        <NavLink to="/" className="brand" onClick={(e) => confirmLeave() || e.preventDefault()}>논문 연구관리</NavLink>
         <div className="side-project">
           <div className="muted small">현재 프로젝트</div>
           <strong title={p.title}>{p.title}</strong>
-          <NavLink to="/" className="small">프로젝트 바꾸기</NavLink>
+          <NavLink to="/" className="small" onClick={(e) => confirmLeave() || e.preventDefault()}>프로젝트 바꾸기</NavLink>
         </div>
         <nav className="nav" aria-label="프로젝트 메뉴">
           {NAV.map((g) => (
@@ -99,7 +100,7 @@ function ProjectLayout() {
               {g.items.map((it) => {
                 const c = it.count?.(bundle);
                 return (
-                  <NavLink key={it.to} to={it.to} end={it.to === ''} data-testid={`nav-${it.to || 'dashboard'}`}>
+                  <NavLink key={it.to} to={it.to} end={it.to === ''} data-testid={`nav-${it.to || 'dashboard'}`} onClick={(e) => confirmLeave() || e.preventDefault()}>
                     <span>{it.label}</span>
                     {c && c[0] > 0 && <span className={`count ${c[1] ? 'alert' : ''}`}>{c[0]}</span>}
                   </NavLink>
@@ -115,7 +116,7 @@ function ProjectLayout() {
             <select
               aria-label="메뉴 이동"
               value=""
-              onChange={(e) => nav(e.target.value === '/' ? '/' : `/p/${p.id}/${e.target.value === '_' ? '' : e.target.value}`)}
+              onChange={(e) => confirmLeave() && nav(e.target.value === '/' ? '/' : `/p/${p.id}/${e.target.value === '_' ? '' : e.target.value}`)}
             >
               <option value="" disabled>메뉴 이동…</option>
               {NAV.flatMap((g) => g.items).map((it) => (
@@ -130,7 +131,9 @@ function ProjectLayout() {
             </div>
           )}
           <div className={`save-state no-print ${saveState.failed ? 'fail' : ''}`} data-testid="save-state" style={{ textAlign: 'right', marginBottom: 4 }}>
-            {saveState.failed
+            {saveState.saving
+              ? '저장 중…'
+              : saveState.failed
               ? '마지막 저장에 실패했습니다. 다시 시도하세요.'
               : saveState.at
                 ? `변경 내용이 이 브라우저에 저장됨 · ${saveState.at.toLocaleTimeString('ko-KR')}`

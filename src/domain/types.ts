@@ -5,7 +5,8 @@
  * - code(V1, H1, L1 …)는 사람이 읽는 표시용 번호이며 관계 키로 쓰지 않는다.
  */
 
-export const SCHEMA_VERSION = 1;
+/** 백업 파일 스키마 버전. v1: 최초 / v2: 무결성 해시(integrity) 추가 */
+export const SCHEMA_VERSION = 2;
 
 export type ID = string;
 
