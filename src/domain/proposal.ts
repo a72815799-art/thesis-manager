@@ -98,6 +98,9 @@ export function buildSnapshot(bundle: ProjectBundle, meetingId?: ID | null): Pro
       to: name(e.toId),
       label: e.hypothesisCodes.join(', '),
       note: e.moderators.map((m) => `${name(m.variableId)}의 조절(${m.code})`).join(', '),
+      fromId: e.fromId,
+      toId: e.toId,
+      moderatorIds: e.moderators.map((m) => m.variableId),
     })),
     hypotheses: hypotheses.map((h) => ({
       id: h.id,

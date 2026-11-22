@@ -401,7 +401,7 @@ export interface ProposalSnapshot {
     conceptualDefinition: string;
     operationalDefinition: string;
   }[];
-  modelPaths: { from: string; to: string; label: string; note: string }[];
+  modelPaths: { from: string; to: string; label: string; note: string; fromId: ID; toId: ID; moderatorIds: ID[] }[];
   hypotheses: { id: ID; code: string; statement: string; kind: HypothesisKind; variables: string[] }[];
   keyLiterature: {
     id: ID;

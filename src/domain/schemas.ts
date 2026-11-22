@@ -227,7 +227,7 @@ export const snapshotSchema = z.object({
   variables: z.array(
     z.object({ id, code: str, name: str, role, conceptualDefinition: str, operationalDefinition: str }),
   ),
-  modelPaths: z.array(z.object({ from: str, to: str, label: str, note: str })),
+  modelPaths: z.array(z.object({ from: str, to: str, label: str, note: str, fromId: id, toId: id, moderatorIds: z.array(id) })),
   hypotheses: z.array(z.object({ id, code: str, statement: str, kind: hypothesisKind, variables: z.array(str) })),
   keyLiterature: z.array(
     z.object({

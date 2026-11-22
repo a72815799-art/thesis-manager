@@ -1,0 +1,248 @@
+{
+  "ranAt": "2026-11-22T02:29:27.723Z",
+  "browser": "Chromium (Playwright)",
+  "total": 34,
+  "pass": 34,
+  "fail": 0,
+  "consoleErrors": [],
+  "results": [
+    {
+      "id": "S01",
+      "name": "신규 프로젝트 생성",
+      "status": "pass",
+      "ms": 477,
+      "detail": ""
+    },
+    {
+      "id": "S02",
+      "name": "프로젝트 저장 후 재접속",
+      "status": "pass",
+      "ms": 220,
+      "detail": ""
+    },
+    {
+      "id": "S03",
+      "name": "연구변수 3개 등록",
+      "status": "pass",
+      "ms": 573,
+      "detail": ""
+    },
+    {
+      "id": "S04",
+      "name": "연구가설 등록 및 연구모형 반영",
+      "status": "pass",
+      "ms": 347,
+      "detail": ""
+    },
+    {
+      "id": "S05",
+      "name": "문헌 등록",
+      "status": "pass",
+      "ms": 414,
+      "detail": ""
+    },
+    {
+      "id": "S06",
+      "name": "문헌과 근거 연결 (+PDF 첨부)",
+      "status": "pass",
+      "ms": 563,
+      "detail": ""
+    },
+    {
+      "id": "S07",
+      "name": "근거 확인 상태 변경",
+      "status": "pass",
+      "ms": 541,
+      "detail": ""
+    },
+    {
+      "id": "S08",
+      "name": "연구계획서 생성 (v1)",
+      "status": "pass",
+      "ms": 725,
+      "detail": ""
+    },
+    {
+      "id": "S09",
+      "name": "DOCX 다운로드 및 내용 검증 (v1)",
+      "status": "pass",
+      "ms": 738,
+      "detail": "표 5개, 연구모형 그림 포함"
+    },
+    {
+      "id": "S10",
+      "name": "지도교수 피드백 등록 (연구 데이터 불변)",
+      "status": "pass",
+      "ms": 544,
+      "detail": ""
+    },
+    {
+      "id": "S11",
+      "name": "연구 대상 변경 요청",
+      "status": "pass",
+      "ms": 307,
+      "detail": ""
+    },
+    {
+      "id": "S12",
+      "name": "변경 영향 항목 확인 (연결 관계 기반)",
+      "status": "pass",
+      "ms": 86,
+      "detail": ""
+    },
+    {
+      "id": "S13",
+      "name": "사용자 승인 후 변경 적용",
+      "status": "pass",
+      "ms": 916,
+      "detail": ""
+    },
+    {
+      "id": "S14",
+      "name": "기존 계획서 버전 보존 확인",
+      "status": "pass",
+      "ms": 562,
+      "detail": ""
+    },
+    {
+      "id": "S15",
+      "name": "새 계획서 생성 (v2) 및 차이 기록",
+      "status": "pass",
+      "ms": 1230,
+      "detail": ""
+    },
+    {
+      "id": "S16",
+      "name": "XLSX 근거표 다운로드 및 내용 검증",
+      "status": "pass",
+      "ms": 361,
+      "detail": "3행 검증"
+    },
+    {
+      "id": "S17",
+      "name": "프로젝트 전체 백업",
+      "status": "pass",
+      "ms": 313,
+      "detail": ""
+    },
+    {
+      "id": "S18",
+      "name": "백업 복원 (삭제 후 복원)",
+      "status": "pass",
+      "ms": 288,
+      "detail": ""
+    },
+    {
+      "id": "S19",
+      "name": "복원된 연결 관계 검증",
+      "status": "pass",
+      "ms": 1186,
+      "detail": "ID·관계 동일 (엔터티 13종 대조)"
+    },
+    {
+      "id": "S20",
+      "name": "오류 없이 재접속",
+      "status": "pass",
+      "ms": 382,
+      "detail": ""
+    },
+    {
+      "id": "X01",
+      "name": "필수값 누락 시 저장 거부",
+      "status": "pass",
+      "ms": 658,
+      "detail": ""
+    },
+    {
+      "id": "X02",
+      "name": "중복 데이터 거부",
+      "status": "pass",
+      "ms": 844,
+      "detail": ""
+    },
+    {
+      "id": "X03",
+      "name": "잘못된 파일 거부 (PDF 아님 / 백업 아님)",
+      "status": "pass",
+      "ms": 339,
+      "detail": ""
+    },
+    {
+      "id": "X04",
+      "name": "손상된 백업 거부 (기존 데이터 유지)",
+      "status": "pass",
+      "ms": 94,
+      "detail": ""
+    },
+    {
+      "id": "X05",
+      "name": "같은 프로젝트 복원 시 덮어쓰기 확인 / 사본 복원",
+      "status": "pass",
+      "ms": 503,
+      "detail": ""
+    },
+    {
+      "id": "X06",
+      "name": "여러 프로젝트 간 데이터 분리",
+      "status": "pass",
+      "ms": 324,
+      "detail": ""
+    },
+    {
+      "id": "X07",
+      "name": "삭제된 문헌의 참조 정리",
+      "status": "pass",
+      "ms": 881,
+      "detail": ""
+    },
+    {
+      "id": "X08",
+      "name": "저장 실패 안내 및 데이터 보존",
+      "status": "pass",
+      "ms": 358,
+      "detail": ""
+    },
+    {
+      "id": "X09",
+      "name": "백업 복원 중 실패 시 기존 데이터 유지",
+      "status": "pass",
+      "ms": 1155,
+      "detail": ""
+    },
+    {
+      "id": "X10",
+      "name": "긴 한국어 텍스트 입력·표시·내보내기",
+      "status": "pass",
+      "ms": 1190,
+      "detail": ""
+    },
+    {
+      "id": "X11",
+      "name": "빈 프로젝트: 모든 화면과 내보내기",
+      "status": "pass",
+      "ms": 2931,
+      "detail": ""
+    },
+    {
+      "id": "D01",
+      "name": "가상 데모: 가상 예시 표시와 영향 분석 사례",
+      "status": "pass",
+      "ms": 3532,
+      "detail": ""
+    },
+    {
+      "id": "R01",
+      "name": "반응형: 태블릿·모바일 기본 사용",
+      "status": "pass",
+      "ms": 1130,
+      "detail": ""
+    },
+    {
+      "id": "Z01",
+      "name": "전체 실행 중 예상치 못한 콘솔 오류 없음",
+      "status": "pass",
+      "ms": 0,
+      "detail": ""
+    }
+  ]
+}

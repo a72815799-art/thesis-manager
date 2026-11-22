@@ -1,0 +1,115 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "check": "DOCX v1: 10개 항목 제목",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "DOCX v1: 표 5개 이상",
+      "status": "pass",
+      "detail": "5개"
+    },
+    {
+      "check": "DOCX v1: 기존 연구 대상 유지",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "DOCX v2: 새 연구 대상 반영",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "DOCX v1: 변수 표 내용",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "DOCX 데모: 가상 예시 표시",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "DOCX 데모: 연구모형 그림 1개",
+      "status": "pass",
+      "detail": "1개"
+    },
+    {
+      "check": "DOCX 데모: 머리글 가상 예시 표시",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "XLSX: 시트 3개",
+      "status": "pass",
+      "detail": "['근거 비교표', '문헌 목록', '안내']"
+    },
+    {
+      "check": "XLSX: 머리글 13열",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "XLSX: 가설-근거 연결",
+      "status": "pass",
+      "detail": "['H1-E1', 'H1-E2', 'H2-E2']"
+    },
+    {
+      "check": "XLSX: 수식 셀 없음",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "XLSX: 긴 한국어 텍스트 보존",
+      "status": "pass",
+      "detail": "최장 셀 3719자"
+    },
+    {
+      "check": "XLSX 데모: 첫 행 가상 예시 표시",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "백업: 형식·스키마 버전",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "백업: 근거의 문헌·가설·변수 참조가 모두 유효",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "check": "LibreOffice 로 열기·PDF 변환: E2E_연구계획서_v1.docx",
+      "status": "pass",
+      "detail": "109927 bytes"
+    },
+    {
+      "check": "LibreOffice 로 열기·PDF 변환: E2E_연구계획서_v2.docx",
+      "status": "pass",
+      "detail": "110255 bytes"
+    },
+    {
+      "check": "LibreOffice 로 열기·PDF 변환: 데모_연구계획서_v1.docx",
+      "status": "pass",
+      "detail": "131404 bytes"
+    },
+    {
+      "check": "LibreOffice 로 열기·PDF 변환: E2E_빈프로젝트_계획서.docx",
+      "status": "pass",
+      "detail": "26768 bytes"
+    },
+    {
+      "check": "LibreOffice 로 열기·PDF 변환: E2E_근거비교표.xlsx",
+      "status": "pass",
+      "detail": "37365 bytes"
+    },
+    {
+      "check": "LibreOffice 로 열기·PDF 변환: 데모_근거비교표.xlsx",
+      "status": "pass",
+      "detail": "46742 bytes"
+    }
+  ]
+}
