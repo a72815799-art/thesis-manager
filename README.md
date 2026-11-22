@@ -8,15 +8,14 @@
 - AI API·계정·결제·클라우드 저장은 없습니다(의도적으로 제외).
 - 현재 범위는 MVP 1~4 영역입니다: ① 프로젝트·진행 현황 ② 연구 주제·연구모형 ③ 문헌·근거 ④ 계획서·지도교수 피드백.
 
-> 저장 위치 안내: 이 프로젝트 전용 저장소가 없어 `BowenScope-V2` 저장소의 `projects/thesis-manager/`에 독립 프로젝트로 두었습니다.
-> 기존 BowenScope 코드는 전혀 수정하지 않았고 의존 관계도 없습니다. 폴더를 그대로 새 저장소로 옮길 수 있습니다.
+> 바로 써 보기: https://a72815799-art.github.io/thesis-manager/ (GitHub Pages, `main`에 푸시되면 자동 배포)
+> 입력한 연구 데이터는 접속한 브라우저에만 저장되며 서버나 이 저장소로 전송되지 않습니다.
 
 ## 실행
 
 Node.js 20 이상(개발·검증은 22)이 필요합니다.
 
 ```bash
-cd projects/thesis-manager
 npm install
 npm run dev        # 개발 서버 → http://localhost:5173
 ```
@@ -28,7 +27,7 @@ npm run build      # dist/ 생성 (타입 검사 포함)
 npm run preview    # http://localhost:4173 에서 dist/ 확인
 ```
 
-`dist/`는 상대 경로로 빌드되어 어떤 정적 호스팅 경로에 올려도 동작합니다. **외부 배포는 하지 않았습니다**(사용자 승인 필요 사항).
+`dist/`는 상대 경로로 빌드되어 어떤 정적 호스팅 경로에 올려도 동작합니다. 배포는 `.github/workflows/deploy.yml`이 담당합니다(타입 검사 → 단위 테스트 → 빌드 → GitHub Pages).
 
 ## 테스트
 

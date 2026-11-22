@@ -20,7 +20,6 @@
 - 검증하지 않은 기능을 완료로 보고하지 않는다. 학교 요구사항은 확인한 것만 적고 나머지는 ‘확인 필요’.
 - 사용자 승인 없이 하지 않는 것: 유료 API·결제, 공개 배포, 실제 사용자 데이터 외부 전송, 기존 자료 파괴적 삭제,
   기본 브랜치 직접 수정·PR 병합, 실제 설문 응답·내담자 정보 처리, 비용이 드는 인프라.
-- 저장소의 다른 프로젝트(`projects/bowenscope-v2`, `artifacts/`, `lib/` 등)는 수정하지 않는다.
 
 ## 개발 단계
 
@@ -30,7 +29,6 @@ Phase 0 환경·설계 → 1 프로젝트·연구모형 → 2 문헌·근거 →
 ## 테스트 기준
 
 ```bash
-cd projects/thesis-manager
 npm ci
 npm run typecheck          # 오류 0
 npm test                   # 단위 (Vitest + fake-indexeddb)
@@ -45,7 +43,8 @@ npm run verify:files       # 내려받은 DOCX/XLSX/백업 독립 검증 (python
 
 ## GitHub 규칙
 
-- 저장소 `a72815799-art/BowenScope-V2`, 작업 폴더 `projects/thesis-manager/`.
+- 저장소 `a72815799-art/thesis-manager` (공개). 2026-11-22에 `BowenScope-V2/projects/thesis-manager`에서 분리했다.
+- `main`에 푸시되면 GitHub Pages(https://a72815799-art.github.io/thesis-manager/)로 자동 배포된다. 공개 저장소이므로 개인정보·실제 연구 자료를 절대 커밋하지 않는다.
 - 작업 브랜치에서만 커밋·푸시한다. `main`에 직접 푸시하거나 PR을 병합하지 않는다.
 - 이전 PR이 병합되었으면 작업 브랜치를 최신 `main`에서 다시 시작한다.
 - 기능 단위로 커밋하고, 인증정보·개인정보·실제 연구 자료를 커밋하지 않는다.

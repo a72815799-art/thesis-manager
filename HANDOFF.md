@@ -6,16 +6,16 @@
 
 | 항목 | 내용 |
 |---|---|
-| 저장소 | https://github.com/a72815799-art/BowenScope-V2 |
-| 작업 브랜치 | `ccr-2ab153d2-c6zv5c` (기본 브랜치 `main`은 건드리지 않음) |
-| 프로젝트 위치 | `projects/thesis-manager/` |
-| 최종 커밋 | 이 브랜치의 최신 커밋 (`git log -1 --format=%H -- projects/thesis-manager`) |
+| 저장소 | https://github.com/a72815799-art/thesis-manager (공개) |
+| 브랜치 | `main` |
+| 분리 전 위치 | `BowenScope-V2/projects/thesis-manager/` |
+| 최종 커밋 | `git log -1 --format=%H` |
 | PR | 1차: #15 (병합됨) · 2차 보완: Draft PR (DEVELOPMENT_STATE.md 참고) |
-| 설치 | `cd projects/thesis-manager && npm install` |
+| 설치 | `npm install` |
 | 실행 | `npm run dev` → http://localhost:5173 |
 | 빌드 | `npm run build` → `dist/` |
 | 테스트 | `npm run typecheck` · `npm test` · `npm run build && npm run e2e` · `npm run verify:files` |
-| 접속 방법 | 로컬 실행만 가능. 외부 배포는 하지 않았습니다(승인 필요). |
+| 접속 방법 | https://a72815799-art.github.io/thesis-manager/ 또는 로컬 실행 |
 | 환경 제약 | Node 20+, 최신 Chromium 계열 브라우저 권장. 데이터는 실행한 브라우저에만 저장 |
 
 ## B. 구현 결과

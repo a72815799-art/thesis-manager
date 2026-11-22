@@ -6,7 +6,7 @@
 |---|---|
 | 단국대 행정법무대학원 공식 안내 | 사용자 승인으로 접속이 허용되어 두 페이지를 확인했습니다([docs/SCHOOL_REQUIREMENTS.md](docs/SCHOOL_REQUIREMENTS.md)). 다만 절차 개관도와 서식 게시판 1쪽 제목까지만 확인했고, **연구계획서 양식·기한, 시험 기준, 서식 2~3쪽과 첨부 파일 내용은 확인 필요**입니다. |
 | 학교 양식(HWP 등)과의 호환 | 미검증. 이 앱은 자체 구성의 DOCX만 만들며 HWP 호환을 보장하지 않습니다. |
-| 전용 저장소 | 없음. 현재 `BowenScope-V2/projects/thesis-manager`에 있습니다. |
+| 전용 저장소 | `a72815799-art/thesis-manager`(공개)로 분리했습니다. `BowenScope-V2/projects/thesis-manager`에 남아 있는 사본의 처리(삭제 여부)는 사용자 결정 사항입니다. |
 | 제품명 | 지시서의 임시명은 ResearchFlow이나, 기존 프로젝트명 ‘논문 연구관리(thesis-manager)’를 유지했습니다(지시서의 “기존 프로젝트명 우선” 규칙). |
 
 ## 기능상 한계

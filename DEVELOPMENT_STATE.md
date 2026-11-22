@@ -8,18 +8,16 @@
 
 ## 마지막 성공 단계
 
-Phase 0~6 전체. 1차 개발은 PR #15로 `main`에 병합되었고, 2차 보완은 Draft PR #16에 있습니다.
+Phase 0~6 전체. 이후 전용 저장소로 분리하고 GitHub Pages 배포를 구성했습니다.
 
-## 브랜치·커밋
+## 저장소·배포
 
 | 항목 | 값 |
 |---|---|
-| 저장소 | https://github.com/a72815799-art/BowenScope-V2 |
-| 프로젝트 폴더 | `projects/thesis-manager/` |
-| 작업 브랜치 | `ccr-2ab153d2-c6zv5c` |
-| 2차 보완 코드 커밋 | `5beda314ca974d51b54508e0fa607595eb91a95b` (이 문서를 추가한 커밋이 그 뒤에 하나 더 있음 → `git log -1`) |
-| Draft PR | https://github.com/a72815799-art/BowenScope-V2/pull/16 (병합하지 않음) |
-| 이전 PR | #15 (사용자가 병합, `main` = `0125366`) |
+| 저장소 | https://github.com/a72815799-art/thesis-manager (공개, 2026-11-22 분리) |
+| 기본 브랜치 | `main` (최신 커밋은 `git log -1`) |
+| 배포 | GitHub Pages — https://a72815799-art.github.io/thesis-manager/ (`.github/workflows/deploy.yml`) |
+| 분리 전 위치 | `a72815799-art/BowenScope-V2`의 `projects/thesis-manager/` (PR #15 병합, Draft PR #16 미병합) |
 
 ## 완료 기능 (구현 + 자동 검증)
 
@@ -71,9 +69,9 @@ DOCX·XLSX 출력, 백업(무결성 해시)·복원(새로/덮어쓰기/사본),
 
 | 항목 | 상태 |
 |---|---|
-| Draft PR #16 검토·병합 | 사용자 결정 대기 |
-| 외부 배포(정적 호스팅) | 하지 않음. 승인 필요 |
-| 전용 저장소 분리 | 하지 않음. 승인 필요 |
+| BowenScope-V2의 Draft PR #16과 남은 사본 처리 | 사용자 결정 대기 |
+| 외부 배포(정적 호스팅) | 사용자 승인으로 GitHub Pages 배포 |
+| 전용 저장소 분리 | 사용자 승인으로 완료 |
 | 자동 재개(예약 작업) 구성 | **자동 재개 미설정.** 추가 사용량이 발생하므로 승인 필요 |
 | 유료 API·AI 기능 | 범위 밖 |
 
